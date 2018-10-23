@@ -16,8 +16,8 @@ if (!empty([$_POST])){
 
     try
     {
-//        echo $_POST['action_type'];
-//       if($_POST['action_type']=='add'){
+       echo $_POST['action_type'];
+      if($_POST['action_type']=='add'){
 //            echo 'Adding user';
             $querySuccess = addUser($email,$firstName,$lastName,$accessright,$username,$password);
 //            echo $querySuccess;
@@ -26,6 +26,7 @@ if (!empty([$_POST])){
         echo $querySuccess ;
         die();
             } 
+        }    
         
     
     catch(PDOException $e)
