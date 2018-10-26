@@ -1,52 +1,67 @@
 <?php
-    require ("../Model/conn.php");
-    require ("../Model/dbFunctions.php");
-    include 'testInput.php';
-?>
-        <?php function addBook($email,$firstName,$lastName,$accessright,$username,$password){
+ function testUserInput($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}    ?> 
 
-   
-            global $conn;
-            try{
+    <?php
+    // calling function
+    function addBook($Name,$Surname,$Nationality,$BirthYear,$DeathYear,$BookTitle,$OriginalTitle,$YearofPublication,$Genre,$MillionsSold,$LanguageWritten,$AuthorID,$coverImagePath){
                 
-                $conn->beginTransaction();
-                
-                $usersql = "INSERT INTO book(BookTitle,OriginalTitle,YearofPublication,Genre,MillionsSold,LanguageWritten,AuthorID,,coverImagePath) VALUES (:BookTitle,:OriginalTitle,:YearofPublication,:Genre,:MillionsSold,:LanguageWritten,:AuthorID,:coverImagePath)";
-                $stmt = $conn -> prepare($usersql);
-                $stmt ->bindValue(':BookTitle',$BookTitle);
-                $stmt ->bindValue(':OriginalTitle',$OriginalTitle);
-                $stmt ->bindValue(':YearofPublication',$YearofPublication);
-                $stmt ->bindValue(':Genre',$Genre);
-                $stmt ->bindValue(':MillionsSold',$MillionsSold);
-                $stmt ->bindValue(':LanguageWritten',$LanguageWritten);
-                $stmt ->bindValue(':AuthorID',$AuthorID);
-                $stmt ->bindValue(':coverImagePath',$coverImagePath);
+                global $conn;
+                try{
+                    
+                    $conn->beginTransaction();
 
-                // $result = $stmt ->execute();
-//                return $result;
-                $lastuserID = $conn -> lastInsertID();
-            
-                //   $loginsql = "INSERT INTO login(username,password,userID) VALUES (:username,:password,:userID)";
-                // $stmt = $conn -> prepare($loginsql);
-                // $stmt ->bindValue(':username',$username);
-                // $stmt ->bindValue(':password',$password);
-                // $stmt ->bindValue(':userID',$lastuserID);
+                    $authorsql = "INSERT INTO author(Name,Surname,Nationality,BirthYear,DeathYear) VALUES (:Name,:Surname,:Nationality,:BirthYear,:DeathYear)";
+                    $stmt = $conn -> prepare($authorsql);
+                    $stmt ->bindValue(':Name',$Name);
+                    $stmt ->bindValue(':Surname',$Surname);
+                    $stmt ->bindValue(':Nationality',$Nationality);
+                    $stmt ->bindValue(':BirthYear',$BirthYear);
+                    $stmt ->bindValue(':DeathYear',$DeathYear);
+                    $result = $stmt ->execute();
+    //                return $result;
+                    $lastuserID = $conn -> lastInsertID();
+
+
+                    $booksql = "INSERT INTO book(BookTitle,OriginalTitle,YearofPublication,Genre,MillionsSold,LanguageWritten,AuthorID,coverImagePath) VALUES (:BookTitle,:OriginalTitle,:YearofPublication,:Genre,:MillionsSold,:LanguageWritten,:AuthorID,:coverImagePath)";
+                    $stmt = $conn -> prepare($booksql);
+                    $stmt ->bindValue(':BookTitle',$BookTitle);
+                    $stmt ->bindValue(':OriginalTitle',$OriginalTitle);
+                    $stmt ->bindValue(':YearofPublication',$YearofPublication);
+                    $stmt ->bindValue(':Genre',$Genre);
+                    $stmt ->bindValue(':MillionsSold',$MillionsSold);
+                    $stmt ->bindValue(':LanguageWritten',$LanguageWritten);
+                    $stmt ->bindValue(':AuthorID',$AuthorID);
+                    $stmt ->bindValue(':coverImagePath',$coverImagePath);
+                    $stmt ->bindValue(':AuthorID',$lastuserID);
+                    // $stmt ->execute();
+
                 
-//                $stmt ->bindValue(':accessRights',$accessRights);
-//                $stmt ->bindValue(':lastName',$lastName);
-//                $stmt ->bindValue(':loginID',loginID);
-//                $stmt ->bindValue(':loginID',$loginID);
+
+                // return $result;
                 
-               
-//                return $result;
-                $stmt->execute();
-                $conn->commit();
-                }
-                
-            catch (PDOexception $ex){
-                $conn -> rollBack ();
-                echo $ex->getMessage();
-            }    
-        }
+                    $stmt->execute();
+                    $conn->commit();
+                    echo'cover inserted';
+                    // header('location:../../pages/addBook.php');
+                    }
+                    
+                catch (PDOexception $ex){
+                    $conn -> rollBack ();
+                    echo $ex->getMessage();
+                }    
+            }
         
-?>        
+            
+    // ?>     
+
+    // <?php
+    //                         var_dump($_POST);
+    //                                 echo([$_POST]);
+    //                                 die();
+    //                         ?>
+            

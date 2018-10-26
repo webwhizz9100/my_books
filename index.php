@@ -25,7 +25,7 @@
                         <figure class="avatar">
                             <img src="https://placehold.it/128x128">
                         </figure>
-                        <form action="controller/pdologin.php" method = "post">
+                        <form action="controller/pdologin.php" method = "POST">
                             <div class="field">
                                 <div class="control">
                                     <input class="input is-large" type="text" placeholder=" Your username" name = "username" autofocus>

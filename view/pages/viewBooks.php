@@ -18,7 +18,7 @@
         <!-- <LOOP starts> -->
 
         <?php
-            include'../../controller/bookLoop.php'; 
+            include'../../controller/bookdb.php'; 
                  if($stmt->rowCount()<1)
                                         {
                                     echo 'Bookshelf is empty';

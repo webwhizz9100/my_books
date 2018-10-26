@@ -56,7 +56,7 @@
                     Register
                 </a>
                
-                <a class="navbar-item" href="http://localhost:7888/my_books/view/pages/logout.php">
+                <a class="navbar-item" href="http://localhost:7888/my_books/controller/logout.php">
                     Log out
                 </a>
                 

@@ -1,10 +1,10 @@
-<!-- <?php
+ <?php
  function testUserInput($data) {
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            return $data;
-        }    ?> -->
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}    ?> 
 
         <?php 
         function addUser($email,$firstName,$lastName,$accessright,$username,$password){

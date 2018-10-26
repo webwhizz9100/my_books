@@ -2,29 +2,29 @@
     include'header.php';
 ?>
 
-    <p class="title has-text-centered">Browse Bookshelf</p>
+<p class="title has-text-centered">Browse Bookshelf</p>
 
-<?php
-    include'../../Model/dbfunctions.php';
-    include'../../Model/conn.php';
-    // $stmt = $conn->prepare ('SELECT Concat(`Name`,`Surname`)AS 'authorName', BookTitle, YearofPublication, MillionsSold,coverImagePath FROM author INNER JOIN book ON book.AuthorID = author.AuthorID');
-    $stmt = $conn -> prepare ('SELECT * FROM `book` INNER JOIN author ON book.AuthorID = author.AuthorID');
-    $stmt->execute();
-    $result = $stmt-> fetchAll();
-    if($stmt->rowCount()<1){
-echo 'Bookshelf is empty';
-        
-    }else{
-        
-        foreach($result as $row) {?>
 
     <section class="section columns">
         <div class="container has-text-centered column is-10 is-offset-1">
+            <!-- <LOOP starts> -->
+
+        <?php
+            include'../../controller/bookLoop.php'; 
+                 if($stmt->rowCount()<1)
+                                        {
+                                    echo 'Bookshelf is empty';
+                                            
+                                        }else{
+                                            foreach($result as $row){?>
+
+
+        <!-- <LOOP ends> -->
 
              <div class="tile is-ancestor">
                 <div class="tile is-parent">
                     <article class="tile is-child box">
-                        <figure class="image">
+                        <figure class="image" style="width:100%" alt="Image"">
                             <img src="<?php echo $row['coverImagePath'];?>">
                         </figure>
                         <figcaption>
