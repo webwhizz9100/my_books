@@ -25,10 +25,10 @@
                         <figure class="avatar">
                             <img src="https://placehold.it/128x128">
                         </figure>
-                        <form action="controller/pdologin.php" method = "POST">
+                        <form action="controller/pdologin.php" method = "POST" autocomplete = "nope">
                             <div class="field">
                                 <div class="control">
-                                    <input class="input is-large" type="text" placeholder=" Your username" name = "username" autofocus>
+                                    <input class="input is-large" type="text" placeholder=" Your username" name = "username" autofocus autocomplete = "false">
                                 </div>
                             </div>
 

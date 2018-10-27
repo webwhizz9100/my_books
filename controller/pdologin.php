@@ -38,9 +38,21 @@ $rows = $stmt -> fetch();
           $_SESSION["firstName"] = $rows['firstName'];
           $_SESSION["login"] = true;
 
+          // Directing authenticate user to admin page
+           session_start();
+          $_SESSION['accessrights'] == "admin";
+
+
+          if((isset($_SESSION['accessrights']) && $_SESSION['accessrights'] == "admin")){
+            header('Location:../View/Pages/viewBooks.php');
+            echo 'Hello ' .$_SESSION["username"].' you are logged in ';
+        }else{
+            header('Location: ../View/Pages/user.php');
+            echo 'Hello ' .$_SESSION["username"].' you are logged in ';
+        }
+
     
-          header('Location:../View/Pages/viewBooks.php');
-    echo 'Hello ' .$_SESSION["username"].' you are logged in ';
+   
 
   }else {
           echo "INVALID LOGIN";
