@@ -97,7 +97,7 @@
                             <div class="field">
                                 <label class="label">AuthorID</label>
                                     <div class="control">
-                                        <input class="input" name="AuthorID" type="number" pattern = "[0-9]" placeholder="" title =" numeric enter onlu>
+                                        <input class="input" name="AuthorID" type="number" pattern = "[0-9]" placeholder="" title =" numeric enter only">
                                     </div>
                             </div>
 

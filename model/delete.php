@@ -1,6 +1,6 @@
 <?php
 
-    require'../model/conn.php';
+    include('conn.php');
 
 // Do I need to declare variable before execution starts?
 
@@ -8,13 +8,13 @@
         try{
            
             $BookID = $row['BookID'];
-            $del_sql = "DELETE FROM book WHERE BookID = $row[BookID]";
+            $del_sql = ("DELETE FROM book WHERE BookID = $row[BookID]");
             $stmt = $conn -> prepare ($del_sql) ;
             // $stmt= $stmt -> prepare ($del_query);
             $result = $stmt ->execute();
         
-            echo'<p>Book has deleted</p>';
-            header("location:./pages/viewBooks.php");
+            echo "Book has deleted";
+            // header("Location:./pages/viewBooks.php");
 
         }
         catch (PDOexception $ex){
