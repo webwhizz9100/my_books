@@ -18,58 +18,58 @@
 
             <form action ="../../controller/pdoBook.php" method = "POST">
                             <div class="field">
-                                <label class="label">Name</label>
+                                <label class="label"> Author Name</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="Name" placeholder="" value="">
+                                        <input class="input" type="text" name="Name" placeholder="" value="" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" title = "Name must be more than one charactor">
                                     </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">Surname</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="Surname" placeholder="" value="">
+                                        <input class="input" type="text" name="Surname" placeholder="" value="" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" title = "Surname must be more than one charactor">
                                     </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">Nationality</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="Nationality" placeholder="" value="">
+                                        <input class="input" type="text" name="Nationality" placeholder="" value="" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" title = "Nationality  must be more than one charactor">
                                     </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">Birth Year</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="BirthYear" placeholder="" value="">
+                                        <input class="input" type="number" name="BirthYear" placeholder="" value="" pattern = "[0-9]{4}" title =" numeric enter onlu">
                                     </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">Death Year</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="DeathYear" placeholder="" value="">
+                                        <input class="input" type="number" name="DeathYear" placeholder="" value="" pattern = "[0-9]{4}" title =" numeric enter onlu>
                                     </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">BookTitle</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="BookTitle" placeholder="" value="">
+                                        <input class="input" type="text" name="BookTitle" placeholder="" value="" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" title = "BookTitle must be more than one charactor">
                                     </div>
                             </div>
                             
                             <div class="field">
                                 <label class="label">OriginalTitle</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="OriginalTitle" placeholder="" >
+                                        <input class="input" type="text" name="OriginalTitle" placeholder="" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" title = "Original Title must be more than one charactor">
                                     </div>    
                             </div>
 
                             <div class="field">
                                 <label class="label">Year Of Publication</label>
                                     <div class="control">
-                                        <input class="input" type="text" name= "YearofPublication" placeholder="" >
+                                        <input class="input" type="number" pattern = "[0-9]{4}" name= "YearofPublication" placeholder= "" title = "numeric enter onlu" >
                                     </div>
                             </div>
 
@@ -83,7 +83,7 @@
                             <div class="field">
                                 <label class="label">Millions Sold</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="MillionsSold" placeholder="" >
+                                        <input class="input" type="number" pattern = "[0-9]{4}" name="MillionsSold" placeholder="" title =" numeric enter onlu >
                                     </div>
                             </div>
 
@@ -97,7 +97,7 @@
                             <div class="field">
                                 <label class="label">AuthorID</label>
                                     <div class="control">
-                                        <input class="input" name="AuthorID" type="text" placeholder="">
+                                        <input class="input" name="AuthorID" type="number" pattern = "[0-9]" placeholder="" title =" numeric enter onlu>
                                     </div>
                             </div>
 

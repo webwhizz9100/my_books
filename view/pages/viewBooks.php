@@ -40,12 +40,10 @@
 
                                    
                                     <?php echo  $row['Name']." ".$row['Surname'] ?><br>
-                                
                                     <?php echo $row['BookTitle']; ?><br>
-                                    <?php echo $row['MillionsSold']; 
-                                          echo " Millions Sold";
-                                    ?><br>
-                                    <p>published in</p><?php echo $row['YearofPublication'];?><br>
+                                    <?php echo $row['MillionsSold']." ". "Millions Sold";?><br>
+                                    <?php echo $row['YearofPublication']." ". "Year Published";?><br>
+
                                  
                                     <a href="http://localhost:7888/my_books/view/pages/update.php<?php echo $row['BookID']?>">EDIT</a><br>
                         <a href="http://localhost:7888/my_books/view/pages/delete.php<?php echo $row['BookID']?>">DELETE</a><br>
