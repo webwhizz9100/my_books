@@ -30,15 +30,11 @@ if (!empty([$_POST]))
 
 
 
-// Can't compare password like this because
-// We expect there to be a hash in the database
-// but we currently store the literal password.
-// This will need to be changed.
 
           if ( $username== $user && password_verify($password, $pass)){
           
             session_start();
-//  if ($password == $rows['password']){
+
 
   // assign session variables
               $_SESSION["username"] = $username;
@@ -46,9 +42,9 @@ if (!empty([$_POST]))
               $_SESSION["accessright"] = $accessright;
               // $_SESSION["login"] = true;
 
-              // print_r($_SESSION);
 
-          // Directing authenticate user to admin page
+
+
           
 
          
@@ -75,9 +71,8 @@ if (!empty([$_POST]))
 
                 }else {
                         echo "INVALID LOGIN";
-    // things are bad and we do not have a user
-        
-    //  header('location:../index.php');
+    
+     header('location:../index.php');
 
                     }
   

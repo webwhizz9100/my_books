@@ -32,6 +32,7 @@
             <div class="navbar-start">
                 <?php
                     session_start();
+                    // print_r($_SESSION);
                     if($_SESSION['accessright']== "admin"){
 
                     echo'<a class="navbar-item" href="http://localhost:7888/my_books/View/Pages/addBook.php">
@@ -53,7 +54,7 @@
                         
 
                       }
-                      print_r($_SESSION);
+                    
                 ?>
                  <?php
                     // session_start();
@@ -76,20 +77,9 @@
 
                       }
                 ?>
-            <a class="navbar-item" href="http://localhost:7888/my_books/View/Pages/addBook.php">
-                   Add book
-                </a>
+            
                
-                <a class="navbar-item" href="http://localhost:7888/my_books/View/Pages/viewBooks.php">
-                    View Book
-                </a>
-                <a class="navbar-item" href="http://localhost:7888/my_books/view/pages/reg.php">
-                    Register
-                </a>
-               
-                <a class="navbar-item" href="http://localhost:7888/my_books/controller/logout.php">
-                    Log out
-                </a>
+                
                 
                 
                 </div>
@@ -99,7 +89,7 @@
                 <div class="navbar-item">
                     <div class="field">
                         <div class="control">
-                            <input class="input" type="text" placeholder="search . . .">
+                            <!-- <input class="input" type="text" placeholder="search . . ."> -->
                         </div>
                     </div>
                 </div>
