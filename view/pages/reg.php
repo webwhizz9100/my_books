@@ -1,5 +1,7 @@
 <?php
     include'header.php';
+    include'nav.php';
+
 ?>
 <!DOCTYPE HTML>
 <html>
