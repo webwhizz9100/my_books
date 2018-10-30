@@ -6,7 +6,7 @@ require("../model/insert.php");
 if (!empty([$_POST])){
 
     //input sanitation via test_user input_funciton
-    $DateUpd = !empty($_POST['DateUpd'])? testUserInput(($_POST['DateUpd'])):null;
+    $DateUpd = !empty($_POST['dateUpdtd'])? testUserInput(($_POST['dateUpdtd'])):null;
     $DateCreated = !empty($_POST['Date Created'])? testUserInput(($_POST['DateCreated'])):null;
     $BookID = !empty($_POST['BookID'])? testUserInput(($_POST['BookID'])):null;
     $userID = !empty($_POST['userID'])? testUserInput(($_POST['userID'])):null;
@@ -19,7 +19,7 @@ if (!empty([$_POST])){
     //    echo $_POST['action_type'];
       if($_POST['action_type']=='add'){
 //            echo 'Adding user';
-            $querySuccess = logbook($DateUpd,$dataCreated,$BookID,$userID);
+            $querySuccess = logbook($dateUpdtd,$dataCreated,$BookID,$userID);
 //            echo $querySuccess;
 //           $querySuccess
                  //header('location:../index.php');
