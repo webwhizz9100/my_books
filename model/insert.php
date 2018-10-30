@@ -39,29 +39,80 @@
                     $stmt ->bindValue(':coverImagePath',$coverImagePath);
                     $stmt ->bindValue(':AuthorID',$lastuserID);
                     // $stmt ->execute();
+                    $lastbookid = $conn -> lastInsertID();
 
-                
+                    logbook(date("d/m/Y"), date("d/m/Y"), $lastbookid, $_SESSION["userID"]);
 
                 // return $result;
                 
                     $stmt->execute();
                     $conn->commit();
                     echo'cover inserted';
-                    // header('location:../../pages/addBook.php');
+                    header('location:../view/pages/addBook.php');
+                   
                     }
+                      
+                  
+
+                            // add function 
+        //   create insert statement author(parent table which has primary key to user as  foregin key to other two table), book and log(tells who updated information ), then go to controller
+    // function logbook($DateUpd,$dataCreated,$BookID,$userID){
+                        // try{
+
+                        $logsql = "INSERT INTO changelog(DateUpd,dataCreated,BookID,userID) VALUES (:DateUpd,:dataCreated,:BookID,:userID)";
+                        
+                        date_default_timezone_set('Australia/Brisbane');
+                        $date = ('Y-m-d H:i:s');
+                        
+                        $stmt = $conn -> prepare($logsql);
+                        $stmt ->bindValue(':DateUpd',$DateUpd);
+                        $stmt ->bindValue(':dataCreated',$dataCreated);
+                        $stmt ->bindValue(':BookID',$BookID);
+                        $stmt ->bindValue(':userID',$userID);
                     
-                catch (PDOexception $ex){
-                    $conn -> rollBack ();
-                    echo $ex->getMessage();
-                }    
-            }
+                        $stmt ->bindValue(':changeLogID',$lastuserID);
+
+                        $stmt->execute();
+                                    $conn->commit();
+                                    echo'Log updated';
+                                    // header('location:../view/pages/viewBook.php');
+                                    
+                
+                                        catch (PDOexception $ex){
+                                            $conn -> rollBack ();
+                                            echo $ex->getMessage();
+                                        }    
+        }  
         
+
+//         // add function 
+//         //   create insert statement author(parent table which has primary key to user as  foregin key to other two table), book and log(tells who updated information ), then go to controller
+// function logbook($DateUpd,$dataCreated,$BookID,$userID){
+//         try{
+
+//         $logsql = "INSERT INTO changelog(DateUpd,dataCreated,BookID,userID) VALUES (:DateUpd,:dataCreated,:BookID,:userID)";
+
+        
+//         $stmt = $conn -> prepare($logsql);
+//         $stmt ->bindValue(':DateUpd',$DateUpd);
+//         $stmt ->bindValue(':dataCreated',$dataCreated);
+//         $stmt ->bindValue(':BookID',$BookID);
+//         $stmt ->bindValue(':userID',$userID);
+       
+//         $stmt ->bindValue(':changeLogID',$lastuserID);
+
+//         $stmt->execute();
+//                     $conn->commit();
+//                     echo'Log updated';
+//                     // header('location:../view/pages/viewBook.php');
+//                     }
+                    
+//                 catch (PDOexception $ex){
+//                     $conn -> rollBack ();
+//                     echo $ex->getMessage();
+//                 }    
+//             }  
+            
+           
             
     // ?>     
-
-    // <?php
-    //                         var_dump($_POST);
-    //                                 echo([$_POST]);
-    //                                 die();
-    //                         ?>
-            
