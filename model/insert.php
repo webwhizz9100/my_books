@@ -42,13 +42,23 @@
                     $lastbookid = $conn -> lastInsertID();
                     
                     session_start();
-                    $userID = $_SESSION['userID']?: null;
+
+                    $userID = $_SESSION['userID'];
+                    echo 'UserId: ';
+                    echo $userID;
+                    die();
+
+                    // $_SESSION = array merge(array(
+                    //     'userID' => ' ',
+                    // ), $_SESSION);
+                    // $userID = $_SESSION['userID'];
+                   
 
 
-                                        if (isset($_SESSION['userID'])) {
+                                        if (isset($_SESSION["userID"])) {
 
                                             // it does; output the message
-                                            var_dump($_SESSION['userID']);
+                                            var_dump($_SESSION["userID"]);
 
                                             // remove the key so we don't keep outputting the message
                                             // unset($_SESSION['userID']);
@@ -57,12 +67,11 @@
                                             }
 
 
-                    $logsql = "INSERT INTO changelog (dateUpdtd,dataCreated,BookID,userID) VALUES (date('d/m/Y'), date('d/m/Y'), $lastbookid, {$_SESSION["userID"]})";
+
+                    $logsql = "INSERT INTO changelog (dateUpdtd,dateCreated,BookID,userID) VALUES (GETDATE(),GETDATE(), :bookID, :userID})";
 
                     $stmt = $conn -> prepare($logsql);
-                    $stmt ->bindValue(':dateUpdtd',$dateUpdtd);
-                    $stmt ->bindValue(':dataCreated',$dataCreated);
-                    $stmt ->bindValue(':BookID',$BookID);
+                    $stmt ->bindValue(':BookID',$lastbookid);
                     $stmt ->bindValue(':userID',$userID);
                 
                     $stmt ->bindValue(':changeLogID',$lastuserID);

@@ -10,7 +10,7 @@
         $password = !empty($_POST['password'])? testUserInput(($_POST['password'])): null;
 
           try {
-                  $stmt = $conn->prepare("SELECT login.password,login.username,users.firstName,users.accessright FROM login INNER JOIN users ON users.userID = login.userID WHERE username=:users");
+                  $stmt = $conn->prepare("SELECT login.password,login.username,users.firstName,users.accessright, users.userID FROM login INNER JOIN users ON users.userID = login.userID WHERE username=:users");
                   $stmt->bindParam(':users', $username);
 
                   $stmt->execute();
@@ -20,6 +20,7 @@
                   $accessright = $rows["accessright"];
                   $pass = $rows["password"];
                   $user = $rows["username"];
+                  $userID = $rows["userID"];
 
                 print_r($rows["username"]);
                 print_r($rows["password"]);
@@ -34,6 +35,7 @@
                                                     $_SESSION["username"] = $username;
                                                     $_SESSION["firstName"] = $firstName;
                                                     $_SESSION["accessright"] = $accessright;
+                                                    $_SESSION["userID"] = $userID;
                                                     // $_SESSION["login"] = true;
 
 

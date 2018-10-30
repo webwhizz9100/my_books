@@ -7,9 +7,11 @@
     $conn;
         try{
            
-            $BookID = $row['BookID'];
-            $del_sql = ("DELETE FROM book WHERE BookID = $row[BookID]");
+            $BookID = $_POST['BookID'];
+            $del_sql = ("DELETE FROM book WHERE BookID = :BookID");
+            // Bind bookid to the query
             $stmt = $conn -> prepare ($del_sql) ;
+            $stmt ->bindValue(':BookID',$BookID);
             // $stmt= $stmt -> prepare ($del_query);
             $result = $stmt ->execute();
         
