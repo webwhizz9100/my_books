@@ -7,7 +7,7 @@
     $conn;
         try{
            
-            $BookID = $_POST['BookID'];
+            $BookID = $_GET['bookid'];
             $del_sql = ("DELETE FROM book WHERE BookID = :BookID");
             // Bind bookid to the query
             $stmt = $conn -> prepare ($del_sql) ;

@@ -76,6 +76,8 @@
                     $stmt->execute();
                                 $conn->commit();
                                 echo'Log updated';
+                                // header('location:../view/pages/viewBook.php');
+
 
                 // return $result;
                 

@@ -48,7 +48,7 @@
 
                                  
                                     <a href="http://localhost:7888/my_books/view/pages/update.php<?php echo $row['BookID']?>">EDIT</a><br>
-                        <a href="http://localhost:7888/my_books/view/pages/delete.php<?php echo $row['BookID']?>">DELETE</a><br>
+                        <a href="http://localhost:7888/my_books/model/delete.php?bookid=<?php echo $row['BookID']?>">DELETE</a><br>
                                                 
                     <!-- <data ends> -->
                     </figcaption>
