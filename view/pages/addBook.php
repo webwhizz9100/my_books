@@ -49,7 +49,7 @@
                             <div class="field">
                                 <label class="label">Death Year</label>
                                     <div class="control">
-                                        <input class="input" type="number" name="DeathYear" placeholder="" value="" pattern = "[0-9]{4}" title =" numeric enter onlu">
+                                        <input class="input" type="text" name="DeathYear" placeholder="" value="">
                                     </div>
                             </div>
 
@@ -84,7 +84,7 @@
                             <div class="field">
                                 <label class="label">Millions Sold</label>
                                     <div class="control">
-                                        <input class="input" type="number" pattern = "[0-9]{4}" name="MillionsSold" placeholder="" title =" numeric enter onlu >
+                                        <input class="input" type="number" pattern = "[0-9]{4}" name="MillionsSold" placeholder="" title =" numeric enter only">
                                     </div>
                             </div>
 

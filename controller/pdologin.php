@@ -16,7 +16,7 @@
                   $stmt->execute();
                   $rows = $stmt -> fetch();
 
-                  // $accessright = $rows["accessright"];
+
                   $accessright = $rows["accessright"];
                   $pass = $rows["password"];
                   $user = $rows["username"];
@@ -68,11 +68,10 @@
 
                     }
   
-                    catch(PDOException $e)
+                  }catch(PDOException $e)
                     {
                     echo "Account creation problems".$e -> getMessage();
                     die();
                     }
-  }
 
     }  

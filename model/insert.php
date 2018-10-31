@@ -38,15 +38,12 @@
                     $stmt ->bindValue(':AuthorID',$AuthorID);
                     $stmt ->bindValue(':coverImagePath',$coverImagePath);
                     $stmt ->bindValue(':AuthorID',$lastuserID);
-                    // $stmt ->execute();
+                    $stmt ->execute();
                     $lastbookid = $conn -> lastInsertID();
                     
                     session_start();
 
                     $userID = $_SESSION['userID'];
-                    echo 'UserId: ';
-                    echo $userID;
-                    die();
 
                     // $_SESSION = array merge(array(
                     //     'userID' => ' ',
@@ -68,13 +65,13 @@
 
 
 
-                    $logsql = "INSERT INTO changelog (dateUpdtd,dateCreated,BookID,userID) VALUES (GETDATE(),GETDATE(), :bookID, :userID})";
+                    $logsql = "INSERT INTO changelog (dateUpdtd,dateCreated,BookID,userID) VALUES (CURDATE(),CURDATE(), :bookID, :userID)";
 
                     $stmt = $conn -> prepare($logsql);
-                    $stmt ->bindValue(':BookID',$lastbookid);
+                    $stmt ->bindValue(':bookID',$lastbookid);
                     $stmt ->bindValue(':userID',$userID);
                 
-                    $stmt ->bindValue(':changeLogID',$lastuserID);
+                    //$stmt ->bindValue(':changeLogID',$lastuserID);
 
                     $stmt->execute();
                                 $conn->commit();
