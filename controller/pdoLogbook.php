@@ -11,29 +11,36 @@ if (!empty([$_POST])){
     $BookID = !empty($_POST['BookID'])? testUserInput(($_POST['BookID'])):null;
     $userID = !empty($_POST['userID'])? testUserInput(($_POST['userID'])):null;
     
-    // session_start();
-    // function addBook();
+    
+
+    session_start();
+    function addBook( ) {
 
     try
     {
     //    echo $_POST['action_type'];
       if($_POST['action_type']=='add'){
 //            echo 'Adding user';
-            $querySuccess = logbook($dateUpdtd,$dataCreated,$BookID,$userID);
-//            echo $querySuccess;
-//           $querySuccess
-                 //header('location:../index.php');
-        echo $querySuccess ;
-        die();
+                    $querySuccess = logbook($dateUpdtd,$dataCreated,$BookID,$userID);
+        //            echo $querySuccess;
+        //           $querySuccess
+                        //header('location:../index.php');
+                    echo $querySuccess ;
+                    die();
             } 
-        }   
+        }  
         
     
-            catch(PDOException $e)
+        catch(PDOException $e)
             {
                 echo "Error".$e -> getMessage();
                 die();
             }
-    }    
+
+        }   
+    }        
+    
+
+      
 
 ?>
