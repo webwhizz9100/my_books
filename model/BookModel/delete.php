@@ -4,7 +4,7 @@
 
 // Do I need to declare variable before execution starts?
 
-    $conn;
+    global $conn;
         try{
            
             $BookID = $_GET['bookid'];
@@ -20,7 +20,7 @@
 
         }
         catch (PDOexception $ex){
-            $conn -> rollBack ();
+            $conn->rollBack ();
             echo $ex->getMessage();
         }     
 ?>

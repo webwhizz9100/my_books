@@ -42,14 +42,14 @@
                     $lastbookid = $conn -> lastInsertID();
                     
                     session_start();
+                    // it does; output the message
+                    $userID = $_SESSION['userID'];
           
                     if (!isset($_SESSION["userID"])) {
                         header("location:../index.php");
                         exit();
                     }
-                    // it does; output the message
-                    $userID = $_SESSION['userID'];
-          
+                    
                     $logsql = "INSERT INTO changelog (dateUpdtd,dateCreated,BookID,userID) VALUES (CURDATE(),CURDATE(), :bookID, :userID)";
 
                     $stmt = $conn -> prepare($logsql);
@@ -59,9 +59,9 @@
                     //$stmt ->bindValue(':changeLogID',$lastuserID);
 
                     $stmt->execute();
-                                $conn->commit();
-                                echo'Log updated';
-                                // header('location:../view/pages/viewBook.php');
+                    $conn->commit();
+                    echo'Log updated';
+                    // header('location:../view/pages/viewBook.php');
 
 
                 // return $result;
@@ -71,10 +71,6 @@
                     // echo'cover inserted';
                     // header('location:../view/pages/addBook.php');
                    
-                    
-                      
-                  
-
                             // add function 
         //   create insert statement author(parent table which has primary key to user as  foregin key to other two table), book and log(tells who updated information ), then go to controller
     // function logbook($DateUpd,$dataCreated,$BookID,$userID){
@@ -83,7 +79,7 @@
                         // $logsql = "INSERT INTO changelog(DateUpd,dataCreated,BookID,userID) VALUES (:DateUpd,:dataCreated,:BookID,:userID)";
                         
                         date_default_timezone_set('Australia/Brisbane');
-                        $date = ('Y-m-d H:i:s');}
+                        $date = ('Y-m-d H:i:s');
                         
                         // $stmt = $conn -> prepare($logsql);
                         // $stmt ->bindValue(':DateUpd',$DateUpd);
@@ -98,12 +94,12 @@
                         //             echo'Log updated';}
                                     // header('location:../view/pages/viewBook.php');
                                     
-                
-                                        catch (PDOexception $ex){
-                                            $conn -> rollBack ();
-                                            echo $ex->getMessage();
-                                        }    
-        }  
+           
+        } catch (PDOexception $ex){
+            $conn->rollBack ();
+            echo $ex->getMessage();
+        }    
+}  
         
 
 //         // add function 

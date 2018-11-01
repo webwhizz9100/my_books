@@ -24,7 +24,7 @@ if (!empty([$_POST])){
     {
     //    echo $_POST['action_type'];
       if($_POST['action_type']=='add'){
-            echo 'Adding user';
+//            echo 'Adding user';
             $querySuccess = addBook($Name,$Surname,$Nationality,$BirthYear,$DeathYear,$BookTitle,$OriginalTitle,$YearofPublication,$Genre,$MillionsSold,$LanguageWritten,$AuthorID,$coverImagePath);
 //            echo $querySuccess;
 //           $querySuccess
