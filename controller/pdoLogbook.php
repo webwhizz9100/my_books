@@ -14,7 +14,7 @@ if (!empty([$_POST])){
     
 
     session_start();
-    function addBook( ) {
+    function addBook () {
 
     try
     {

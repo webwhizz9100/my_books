@@ -34,7 +34,12 @@
             <div class="panel panel-primary">
                 <figure>
 
-                    <div class="panel-body"><img src="<?php echo $row['coverImagePath'];?>" class="img-responsive" style="width:100%" alt="Image"></div>
+                    <div class="panel-body"><img src="<?php 
+                    if(isset($row['coverImagePath'])){
+                        echo $row['coverImagePath'];
+                    }else{
+                        echo "https://www.appointbetterboards.co.nz/Custom/Appoint/img/avatar-large.png";
+                    }?>" class="img-responsive" style="width:100%" alt="Image"></div>
                 </figure>
                     <figcaption>
                     <!-- <data> -->

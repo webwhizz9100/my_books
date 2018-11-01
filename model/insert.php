@@ -42,29 +42,14 @@
                     $lastbookid = $conn -> lastInsertID();
                     
                     session_start();
-
+          
+                    if (!isset($_SESSION["userID"])) {
+                        header("location:../index.php");
+                        exit();
+                    }
+                    // it does; output the message
                     $userID = $_SESSION['userID'];
-
-                    // $_SESSION = array merge(array(
-                    //     'userID' => ' ',
-                    // ), $_SESSION);
-                    // $userID = $_SESSION['userID'];
-                   
-
-
-                                        if (isset($_SESSION["userID"])) {
-
-                                            // it does; output the message
-                                            var_dump($_SESSION["userID"]);
-
-                                            // remove the key so we don't keep outputting the message
-                                            // unset($_SESSION['userID']);
-                                            }else{
-                                                echo'userID not found';
-                                            }
-
-
-
+          
                     $logsql = "INSERT INTO changelog (dateUpdtd,dateCreated,BookID,userID) VALUES (CURDATE(),CURDATE(), :bookID, :userID)";
 
                     $stmt = $conn -> prepare($logsql);

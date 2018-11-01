@@ -21,28 +21,28 @@
                             <div class="field">
                                 <label class="label"> Author Name</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="Name" placeholder="" value="" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" title = "Name must be more than one charactor">
+                                        <input class="input" type="text" name="Name" placeholder="" value="" pattern="[a-zA-Z]{1,20}" title = "Name must be more than one charactor">
                                     </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">Surname</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="Surname" placeholder="" value="" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" title = "Surname must be more than one charactor">
+                                        <input class="input" type="text" name="Surname" placeholder="" value="Natsuko">
                                     </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">Nationality</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="Nationality" placeholder="" value="" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" title = "Nationality  must be more than one charactor">
+                                        <input class="input" type="text" name="Nationality" placeholder="" value="" >
                                     </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">Birth Year</label>
                                     <div class="control">
-                                        <input class="input" type="number" name="BirthYear" placeholder="" value="" pattern = "[0-9]{4}" title =" numeric enter onlu">
+                                        <input class="input" type="number" name="BirthYear" placeholder="" value="" pattern = "[0-9]{4}">
                                     </div>
                             </div>
 
@@ -56,21 +56,21 @@
                             <div class="field">
                                 <label class="label">BookTitle</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="BookTitle" placeholder="" value="" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" title = "BookTitle must be more than one charactor">
+                                        <input class="input" type="text" name="BookTitle" placeholder="" value="" >
                                     </div>
                             </div>
                             
                             <div class="field">
                                 <label class="label">OriginalTitle</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="OriginalTitle" placeholder="" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" title = "Original Title must be more than one charactor">
+                                        <input class="input" type="text" name="OriginalTitle" placeholder="">
                                     </div>    
                             </div>
 
                             <div class="field">
                                 <label class="label">Year Of Publication</label>
                                     <div class="control">
-                                        <input class="input" type="number" pattern = "[0-9]{4}" name= "YearofPublication" placeholder= "" title = "numeric enter onlu" >
+                                        <input class="input" type="number" pattern = "[0-9]{4}" name= "YearofPublication" placeholder= ""  >
                                     </div>
                             </div>
 
@@ -84,7 +84,7 @@
                             <div class="field">
                                 <label class="label">Millions Sold</label>
                                     <div class="control">
-                                        <input class="input" type="number" pattern = "[0-9]{4}" name="MillionsSold" placeholder="" title =" numeric enter only">
+                                        <input class="input" type="number" pattern = "[0-9]{4}" name="MillionsSold" placeholder="" >
                                     </div>
                             </div>
 
@@ -98,7 +98,7 @@
                             <div class="field">
                                 <label class="label">AuthorID</label>
                                     <div class="control">
-                                        <input class="input" name="AuthorID" type="number" pattern = "[0-9]" placeholder="" title =" numeric enter only">
+                                        <input class="input" name="AuthorID" type="number" pattern = "[0-9]" placeholder="" >
                                     </div>
                             </div>
 
