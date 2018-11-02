@@ -80,6 +80,14 @@
                         
                         date_default_timezone_set('Australia/Brisbane');
                         $date = ('Y-m-d H:i:s');
+
+                        // Edit Book goes here
+
+
+
+
+
+                        
                         
                         // $stmt = $conn -> prepare($logsql);
                         // $stmt ->bindValue(':DateUpd',$DateUpd);

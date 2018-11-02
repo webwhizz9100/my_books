@@ -12,21 +12,29 @@
 
             if(isset($_GET['bookid'])) {
 
-            
 
-            
+
+            //    "DELETE
+            //     FROM    changelog
+            //     WHERE   BookID = :bookid";
+
+            //     "DELETE
+            //     FROM    book
+            //     WHERE  BookID = :bookid";
+
 
             $del_sql = ("DELETE FROM book WHERE BookID = :bookid");
+
             // Bind bookid to the query
             $stmt = $conn -> prepare ($del_sql) ;
             // $stmt ->bindValue(':BookID',$BookID);
             $BookID = $_GET['bookid'];
             $stmt ->bindValue(':bookid',$BookID);
             // $stmt= $stmt -> prepare ($del_query);
-            $result = $stmt ->execute();
+            $result = $stmt ->execute() or die("error");
         
             echo "Book has deleted";}
-            // header("Location:./pages/viewBooks.php");
+            // header("Location:pages/viewBooks.php");
 
         }
         catch (PDOexception $ex){
