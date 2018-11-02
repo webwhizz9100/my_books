@@ -116,7 +116,7 @@
                 </fieldset>            
                         
                         <input type = "hidden" name = "action_type" value = "add">
-                        <button class="button  is-block is-info is-large">Submit</button>
+                        <button class="button  is-block is-info is-large">Edit</button>
             </form>
         </body> 
 </html>

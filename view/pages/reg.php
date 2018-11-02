@@ -24,7 +24,7 @@
                 <div class="field">
                         <label class="label">Username</label>
                             <div class="control has-icons-left has-icons-right">
-                                <input class="input" type="text" name = "username" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" title = "username must be more than one charactor">
+                                <input class="input" type="text" name = "username" pattern="[a-zA-Z]{1,20}" title = "Username must be more than one charactor">
                                 <span class="icon is-small is-left">
                                 <i class="fas fa-user"></i>
                                 </span> 
@@ -35,7 +35,7 @@
                         <div class="field">
                             <label class="label">Password</label>
                                 <div class="control">
-                                    <input class="input" type="password" name = "password" placeholder="" pattern = " ^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*${2.}"  title="password must contain at least 3 character">        
+                                    <input class="input" type="password" name = "password" placeholder="" pattern="[a-zA-Z]{1,20}" title = "password must be more than one charactor">        
                                 </div>
                         </div>
 
@@ -54,13 +54,13 @@
                         <div class="field">
                             <label class="label">Name</label>
                                 <div class="control">
-                                    <input class="input" type="text" name = "firstName" placeholder="" pattern="[A-Za-z]{2,}" title = "Name must be more than 2 charactor">
+                                    <input class="input" type="text" name = "firstName" placeholder="" pattern="[a-zA-Z]{1,20}" title = "Name must be more than one charactor">
                                 </div>
                         </div>
                         <div class="field">
                             <label class="label">Lastname</label>
                                 <div class="control">
-                                    <input class="input" type="text" name = "lastName" placeholder="" pattern="[A-Za-z]{2,}" title = "lastname must be more than 2 charactor">
+                                    <input class="input" type="text" name = "lastName" placeholder="" pattern="[A-Za-z]{1,20}" title = "lastname must be more than 2 charactor">
                                 </div>
                         </div>
                             <div class="field">

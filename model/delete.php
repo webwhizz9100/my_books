@@ -2,20 +2,29 @@
 
     include('conn.php');
 
-// Do I need to declare variable before execution starts?
+
 
     global $conn;
         try{
+            $conn->beginTransaction();
            
-            $BookID = $_GET['bookid'];
+            // $BookID = $_GET['bookid'];
+
+            if(isset($_GET['bookid'])) {
+
+            
+
+            
+
             $del_sql = ("DELETE FROM book WHERE BookID = :BookID");
             // Bind bookid to the query
             $stmt = $conn -> prepare ($del_sql) ;
-            $stmt ->bindValue(':BookID',$BookID);
+            // $stmt ->bindValue(':BookID',$BookID);
+            $stmt ->bindValue(':bookid',$BookID);
             // $stmt= $stmt -> prepare ($del_query);
             $result = $stmt ->execute();
         
-            echo "Book has deleted";
+            echo "Book has deleted";}
             // header("Location:./pages/viewBooks.php");
 
         }

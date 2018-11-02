@@ -38,7 +38,7 @@
                     if(isset($row['coverImagePath'])){
                         echo $row['coverImagePath'];
                     }else{
-                        echo "https://www.appointbetterboards.co.nz/Custom/Appoint/img/avatar-large.png";
+                        echo "../images/BookCovers/default.png";
                     }?>" class="img-responsive" style="width:100%" alt="Image"></div>
                 </figure>
                     <figcaption>

@@ -28,14 +28,14 @@
                             <div class="field">
                                 <label class="label">Surname</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="Surname" placeholder="" value="Natsuko">
+                                        <input class="input" type="text" name="Surname" placeholder="" value="" pattern="[a-zA-Z]{1,20}" title = "surname must be more than one charactor">
                                     </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">Nationality</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="Nationality" placeholder="" value="" >
+                                        <input class="input" type="text" name="Nationality" placeholder="" value="" pattern="[a-zA-Z]{1,20}" title = "Nationality must be more than one charactor">
                                     </div>
                             </div>
 
@@ -56,14 +56,14 @@
                             <div class="field">
                                 <label class="label">BookTitle</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="BookTitle" placeholder="" value="" >
+                                        <input class="input" type="text" name="BookTitle" placeholder="" value=""  pattern="[a-zA-Z]{1,20}" title = "Title must be more than one charactor">
                                     </div>
                             </div>
                             
                             <div class="field">
                                 <label class="label">OriginalTitle</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="OriginalTitle" placeholder="">
+                                        <input class="input" type="text" name="OriginalTitle" placeholder="" pattern="[a-zA-Z]{1,20}" title = "Original title must be more than one charactor">
                                     </div>    
                             </div>
 
@@ -77,7 +77,7 @@
                             <div class="field">
                                 <label class="label">Genre</label>
                                     <div class="control">
-                                        <input class="input" type="text"  name="Genre" placeholder="" >
+                                        <input class="input" type="text"  name="Genre" placeholder="" pattern="[a-zA-Z]{1,20}" title = "Genre  must be more than one charactor">
                                     </div>
                             </div>
 
@@ -91,7 +91,7 @@
                             <div class="field">
                                 <label class="label">Language Written</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="LanguageWritten" placeholder="">
+                                        <input class="input" type="text" name="LanguageWritten" placeholder="" pattern="[a-zA-Z]{1,20}" title = "Language must be more than one charactor">
                                     </div>
                             </div>   
 
