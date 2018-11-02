@@ -16,10 +16,11 @@
 
             
 
-            $del_sql = ("DELETE FROM book WHERE BookID = :BookID");
+            $del_sql = ("DELETE FROM book WHERE BookID = :bookid");
             // Bind bookid to the query
             $stmt = $conn -> prepare ($del_sql) ;
             // $stmt ->bindValue(':BookID',$BookID);
+            $BookID = $_GET['bookid'];
             $stmt ->bindValue(':bookid',$BookID);
             // $stmt= $stmt -> prepare ($del_query);
             $result = $stmt ->execute();
