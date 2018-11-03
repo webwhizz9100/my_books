@@ -17,7 +17,7 @@
     </head>
         <body>
 
-            <form action ="../../controller/pdoeEdit.php" method = "POST">
+            <form action ="../../controller/pdoEdit.php" method = "POST">
                 <fieldset>
                      <legend>Authour Detail:</legend>
                             <div class="field">
@@ -54,7 +54,7 @@
                                         <input class="input" type="text" name="DeathYear" placeholder="" value="">
                                     </div>
                             </div>
-                </fieldset>  
+                </fieldset></br>
                 <fieldset>
                     <legend>Book Detail</legend>          
 
