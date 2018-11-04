@@ -1,5 +1,6 @@
 <?php
     include'header.php';
+    include'nav.php';
 ?>
 <!-- <section class="hero is-info is-medium is-bold">
         <div class="hero-body">
@@ -11,15 +12,14 @@
 <?php
     include'body.php';
 ?>
-                                                <article>
+     <article>
    
-                                                    <p class="is-size-3">Airport pick up service</p>
-                                                    <p class ="is-size-5">Mybook has partnered up with Uber to deliver your choice of book for your convenience at airport whether you are just arrive to Australia or ready to take off to your adventure or perhaps relaxed holiday on the beach! 
-                                                    Service is optional and available throughout Australia. 
-                                                    </p>
+         <p class="is-size-3">Airport pick up service</p>
+         <p class ="is-size-5">Mybook has partnered up with Uber to deliver your choice of book for your convenience at airport whether you are just arrive to Australia or ready to take off to your adventure or perhaps relaxed holiday on the beach! 
+             Service is optional and available throughout Australia. </p>
 
-                                                </article>
-                <?php
+     </article>
+    <?php
 
     include'footer.php';
 ?>

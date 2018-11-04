@@ -62,27 +62,14 @@
                     $conn->commit();
                     echo'Log updated';
                     // header('location:../view/pages/viewBook.php');
-
-
-                // return $result;
-                
-                    // $stmt->execute();
-                    // $conn->commit();
-                    // echo'cover inserted';
-                    // header('location:../view/pages/addBook.php');
-                   
-                            // add function 
-        //   create insert statement author(parent table which has primary key to user as  foregin key to other two table), book and log(tells who updated information ), then go to controller
-    // function logbook($DateUpd,$dataCreated,$BookID,$userID){
-                    
-
-                        // $logsql = "INSERT INTO changelog(DateUpd,dataCreated,BookID,userID) VALUES (:DateUpd,:dataCreated,:BookID,:userID)";
-                        
+    
                         date_default_timezone_set('Australia/Brisbane');
                         $date = ('Y-m-d H:i:s');
 
                         // Edit Book goes here
-    function editBook($Name,$Surname,$Nationality,$BirthYear,$DeathYear,$BookTitle,$OriginalTitle,$YearofPublication,$Genre,$MillionsSold,$LanguageWritten,$AuthorID,$coverImagePath) {                   
+    function editBook($AuthorID,$Name,$Surname,$Nationality,$BirthYear,$DeathYear,$BookTitle,$OriginalTitle,$YearofPublication,$Genre,$MillionsSold,$LanguageWritten,$coverImagePath) {  
+        global $conn;    
+                                    //  Updating record 
                         $editAuthor = "UPDATE author SET Name=:Name,Surname=:Surname,Nationality=:Nationality,BirthYear=:BirthYear,DeathYear=:DeathYear WHERE AuthourID = :AuthorID ";
                         $stmt = $conn -> prepare($editAuthor);
                         $stmt ->bindValue(':Name',$Name);
@@ -93,9 +80,8 @@
                         $stmt ->bindValue(':AuthorID',$AuthorID);
                         $result = $stmt ->execute();
         //                return $result;
+                        echo'hoge hoge';
 
-
-    
                         $editBook = "UPDATE book SET BookTitle =:BookTitle,OriginalTitle=:OriginalTitle,YearofPublication=:YearofPublication,Genre=:Genre,MillionsSold=:MillionsSold,LanguageWritten=:LanguageWritten,coverImagePath=:coverImagePath WHERE AUthourID = :AuthorID";
                         $stmt = $conn -> prepare($editBook);
                         $stmt ->bindValue(':BookTitle',$BookTitle);
@@ -109,61 +95,13 @@
                         $stmt ->bindValue(':AuthorID',$AuthorID);
                         $result = $stmt ->execute();}
 
-
-
-
-
-                        
-                        
-                        // $stmt = $conn -> prepare($logsql);
-                        // $stmt ->bindValue(':DateUpd',$DateUpd);
-                        // $stmt ->bindValue(':dataCreated',$dataCreated);
-                        // $stmt ->bindValue(':BookID',$BookID);
-                        // $stmt ->bindValue(':userID',$userID);
-                    
-                        // $stmt ->bindValue(':changeLogID',$lastuserID);
-
-                        // $stmt->execute();
-                        //             $conn->commit();
-                        //             echo'Log updated';}
-                                    // header('location:../view/pages/viewBook.php');
-                                    
+                        echo'call shotgun';
+             
            
         } catch (PDOexception $ex){
             $conn->rollBack ();
             echo $ex->getMessage();
         }    
 }  
-        
-
-//         // add function 
-//         //   create insert statement author(parent table which has primary key to user as  foregin key to other two table), book and log(tells who updated information ), then go to controller
-// function logbook($DateUpd,$dataCreated,$BookID,$userID){
-//         try{
-
-//         $logsql = "INSERT INTO changelog(DateUpd,dataCreated,BookID,userID) VALUES (:DateUpd,:dataCreated,:BookID,:userID)";
-
-        
-//         $stmt = $conn -> prepare($logsql);
-//         $stmt ->bindValue(':DateUpd',$DateUpd);
-//         $stmt ->bindValue(':dataCreated',$dataCreated);
-//         $stmt ->bindValue(':BookID',$BookID);
-//         $stmt ->bindValue(':userID',$userID);
-       
-//         $stmt ->bindValue(':changeLogID',$lastuserID);
-
-//         $stmt->execute();
-//                     $conn->commit();
-//                     echo'Log updated';
-//                     // header('location:../view/pages/viewBook.php');
-//                     }
-                    
-//                 catch (PDOexception $ex){
-//                     $conn -> rollBack ();
-//                     echo $ex->getMessage();
-//                 }    
-//             }  
             
-           
-            
-    // ?>     
+     ?>     

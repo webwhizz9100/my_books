@@ -1,6 +1,18 @@
 my_books
 Welcome to my_books.
 
-Please use admin ID: nat, password: nat;
+Please use following login detail
 
-            username:joe, password: eoj;
+    admin ID: nat, password: nat;
+    username:joe, password: eoj;
+
+This programm was written in following environment.
+
+Mamp
+    Nginx
+    PHP7.2
+    MySQL
+Broswer
+    Google Chrome
+    Safari    
+BULMA & Bootstrap

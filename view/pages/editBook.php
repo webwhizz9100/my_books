@@ -18,7 +18,7 @@
         <body>
 
             <form action ="../../controller/pdoEdit.php" method = "POST">
-                <fieldset>
+                <fieldset></br>
                      <legend>Authour Detail:</legend>
                             <div class="field">
                                 <label class="label"> Author Name</label>
@@ -113,7 +113,7 @@
                                         <input class="input" type="text" name="coverImagePath" placeholder="">
                                     </div>
                             </div>
-                </fieldset>            
+                </fieldset>   </br>         
                         
                         <input type = "hidden" name = "action_type" value = "add">
                         <button class="button  is-block is-info is-large">Edit</button>

@@ -22,20 +22,20 @@
                   $user = $rows["username"];
                   $userID = $rows["userID"];
 
-                print_r($rows["username"]);
-                print_r($rows["password"]);
-                print_r($rows["accessright"]);
+                // print_r($rows["username"]);
+                // print_r($rows["password"]);
+                // print_r($rows["accessright"]);
 
           if ( $username== $user && password_verify($password, $pass)){
           
-                                                  session_start();
+           session_start();
 
 
-                                        // assign session variables
-                                                    $_SESSION["username"] = $username;
-                                                    $_SESSION["firstName"] = $firstName;
-                                                    $_SESSION["accessright"] = $accessright;
-                                                    $_SESSION["userID"] = $userID;
+           // assign session variables
+              $_SESSION["username"] = $username;
+              $_SESSION["firstName"] = $firstName;
+              $_SESSION["accessright"] = $accessright;
+              $_SESSION["userID"] = $userID;
                                                     // $_SESSION["login"] = true;
 
 
@@ -43,23 +43,14 @@
 
 
                                                 //  if((isset($_SESSION['accessrights']) && $_SESSION['accessrights'] == "admin")){
-                                                      header('Location:../View/Pages/viewBooks.php');
+           header('Location:../View/Pages/viewBooks.php');
                                                       // echo 'Hello ' .$_SESSION["username"].' you are logged in ';
           // }
-                        }else
+            }else
 
-                                  if((empty($_SESSION['user']))){
-                                  header('location:../index.php');
-                                  die();
-
-        //     (isset($_SESSION['accessrights']) && $_SESSION['accessrights'] == "user")
-        //     header('Location: ../View/Pages/user.php');
-        //     echo 'Hello ' .$_SESSION["username"].' you are logged in ';
-        // }else{
-        //   header('Location: ../index.php');
-        //   echo '<p>Login is required to proceed</p> ';
-        // }
-
+              if((empty($_SESSION['user']))){
+               header('location:../index.php');
+                die();
 
                 }else{
                         echo "INVALID LOGIN";

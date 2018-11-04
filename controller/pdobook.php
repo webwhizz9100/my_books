@@ -1,7 +1,7 @@
 <?php
 require("../model/conn.php");
 require("../model/insert.php");
-// require "../model/testInput.php";
+
 
 if (!empty([$_POST])){
 

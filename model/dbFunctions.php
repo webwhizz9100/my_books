@@ -31,12 +31,6 @@
                     $stmt ->bindValue(':password',$password);
                     $stmt ->bindValue(':userID',$lastuserID);
                 
-//                $stmt ->bindValue(':accessRights',$accessRights);
-//                $stmt ->bindValue(':lastName',$lastName);
-//                $stmt ->bindValue(':loginID',loginID);
-//                $stmt ->bindValue(':loginID',$loginID);
-                
-               
 //                return $result;
                 $stmt->execute();
                 $conn->commit();
