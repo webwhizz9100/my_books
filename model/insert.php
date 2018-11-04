@@ -82,6 +82,32 @@
                         $date = ('Y-m-d H:i:s');
 
                         // Edit Book goes here
+    function editBook($Name,$Surname,$Nationality,$BirthYear,$DeathYear,$BookTitle,$OriginalTitle,$YearofPublication,$Genre,$MillionsSold,$LanguageWritten,$AuthorID,$coverImagePath) {                   
+                        $editAuthor = "UPDATE author SET Name=:Name,Surname=:Surname,Nationality=:Nationality,BirthYear=:BirthYear,DeathYear=:DeathYear WHERE AuthourID = :AuthorID ";
+                        $stmt = $conn -> prepare($editAuthor);
+                        $stmt ->bindValue(':Name',$Name);
+                        $stmt ->bindValue(':Surname',$Surname);
+                        $stmt ->bindValue(':Nationality',$Nationality);
+                        $stmt ->bindValue(':BirthYear',$BirthYear);
+                        $stmt ->bindValue(':DeathYear',$DeathYear);
+                        $stmt ->bindValue(':AuthorID',$AuthorID);
+                        $result = $stmt ->execute();
+        //                return $result;
+
+
+    
+                        $editBook = "UPDATE book SET BookTitle =:BookTitle,OriginalTitle=:OriginalTitle,YearofPublication=:YearofPublication,Genre=:Genre,MillionsSold=:MillionsSold,LanguageWritten=:LanguageWritten,coverImagePath=:coverImagePath WHERE AUthourID = :AuthorID";
+                        $stmt = $conn -> prepare($editBook);
+                        $stmt ->bindValue(':BookTitle',$BookTitle);
+                        $stmt ->bindValue(':OriginalTitle',$OriginalTitle);
+                        $stmt ->bindValue(':YearofPublication',$YearofPublication);
+                        $stmt ->bindValue(':Genre',$Genre);
+                        $stmt ->bindValue(':MillionsSold',$MillionsSold);
+                        $stmt ->bindValue(':LanguageWritten',$LanguageWritten);
+                        $stmt ->bindValue(':AuthorID',$AuthorID);
+                        $stmt ->bindValue(':coverImagePath',$coverImagePath);
+                        $stmt ->bindValue(':AuthorID',$AuthorID);
+                        $result = $stmt ->execute();}
 
 
 

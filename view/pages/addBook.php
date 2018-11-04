@@ -18,6 +18,8 @@
         <body>
 
             <form action ="../../controller/pdoBook.php" method = "POST">
+            <fieldset></br>
+                     <legend>Authour Detail:</legend>
                             <div class="field">
                                 <label class="label"> Author Name</label>
                                     <div class="control">
@@ -52,6 +54,9 @@
                                         <input class="input" type="text" name="DeathYear" placeholder="" value="">
                                     </div>
                             </div>
+                            </fieldset></br>
+                <fieldset>
+                    <legend>Book Detail</legend>             
 
                             <div class="field">
                                 <label class="label">BookTitle</label>
@@ -108,6 +113,7 @@
                                         <input class="input" type="text" name="coverImagePath" placeholder="">
                                     </div>
                             </div>
+                </fieldset></br>                  
                         
                         <input type = "hidden" name = "action_type" value = "add">
                         <button class="button  is-block is-info is-large">Submit</button>
