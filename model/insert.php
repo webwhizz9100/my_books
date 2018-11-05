@@ -14,7 +14,7 @@
                 try{
                     
                     $conn->beginTransaction();
-
+                    
                     $authorsql = "INSERT INTO author(Name,Surname,Nationality,BirthYear,DeathYear) VALUES (:Name,:Surname,:Nationality,:BirthYear,:DeathYear)";
                     $stmt = $conn -> prepare($authorsql);
                     $stmt ->bindValue(':Name',$Name);
@@ -89,7 +89,7 @@ function editBook($AuthorID,$Name,$Surname,$Nationality,$BirthYear,$DeathYear,$B
     //                return $result;
                     echo'hoge hoge';
 
-                    $editBook = "UPDATE book SET BookTitle =:BookTitle,OriginalTitle=:OriginalTitle,YearofPublication=:YearofPublication,Genre=:Genre,MillionsSold=:MillionsSold,LanguageWritten=:LanguageWritten,coverImagePath=:coverImagePath WHERE AUthourID = :AuthorID";
+                    $editBook = "UPDATE book SET BookTitle =:BookTitle,OriginalTitle=:OriginalTitle,YearofPublication=:YearofPublication,Genre=:Genre,MillionsSold=:MillionsSold,LanguageWritten=:LanguageWritten,coverImagePath=:coverImagePath WHERE AuthourID = :AuthorID";
                     $stmt = $conn -> prepare($editBook);
                     $stmt ->bindValue(':BookTitle',$BookTitle);
                     $stmt ->bindValue(':OriginalTitle',$OriginalTitle);
@@ -101,6 +101,7 @@ function editBook($AuthorID,$Name,$Surname,$Nationality,$BirthYear,$DeathYear,$B
                     $stmt ->bindValue(':coverImagePath',$coverImagePath);
                     $stmt ->bindValue(':AuthorID',$AuthorID);
                     $result = $stmt ->execute();
+
                     echo'call shotgun';
                 }
 

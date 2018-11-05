@@ -29,8 +29,8 @@ if (!empty([$_POST])){
 //            echo $querySuccess;
 //           $querySuccess
                  //header('location:../index.php');
-        echo $querySuccess ;
-        die();
+        // echo $querySuccess ;
+        header('location:../view/pages/viewBooks.php');
             } 
         }   
         
