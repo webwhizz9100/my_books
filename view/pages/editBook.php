@@ -3,41 +3,36 @@
     include'nav.php';
     include'../../model/conn.php';
 
-    if (!empty($_GET['bookid'])){
+     
+    if (isset($_GET['bookid'])){
 
-    // define variables
-    $BookID = $_GET['bookid'];
-    // $BookID=$_REQUEST['BookID'];
+        $BookID = $_GET['bookid'];
 
-    $slc_Bk = "SELECT * from book where BookID='".$BookID."'"; 
-    $slc_Bk = $conn -> prepare($slc_Bk);
-    $slc_Bk->execute();
-    $rows = $slc_Bk->fetch();
-    $BookTitle = $row['BookTitle'];
-    $OriginalTitle = $row['OriginalTitle'];
-    $YearofPublication = $row['YearofPublication'];
-    $Genre = $row['Genre'];
-    $MillionsSold = $row['MillionsSold'];
-    $LanguageWritten = $row['LanguageWritten'];
-    $BookCover = $row['BookCover'];
+        $slc_Bk = $conn->prepare("SELECT * FROM book WHERE BookID= :BookID");
+        $slc_Bk->bindParam(':BookID', $BookID);
+        $slc_Bk->execute();
+        $row = $slc_Bk->fetch();
+        $BookTitle = $row['BookTitle'];
+        $OriginalTitle = $row['OriginalTitle'];
+        $YearofPublication = $row['YearofPublication'];
+        $Genre = $row['Genre'];
+        $MillionsSold = $row['MillionsSold'];
+        $LanguageWritten = $row['LanguageWritten'];
+        $AuthorID = $row['AuthorID'];
+        $BookCover = $row['coverImagePath'];
+       
+            
+        //$AuthorID = $_GET['bookid'];
+        $slc_Athr = $conn->prepare("SELECT * FROM author WHERE AuthorID = :AuthorID");
+        $slc_Athr->bindparam(':AuthorID', $AuthorID);
+        $slc_Athr->execute();
+        $rows = $slc_Athr->fetch();
+        $Name = $rows['Name'];
+        $Surname = $rows['Surname'];
+        $Nationality = $rows['Nationality'];
+        $BirthYear = $rows['BirthYear'];
+        $DeathYear = $rows['DeathYear'];
 
-    var_dump($slc_Bk);
-
-    // $AuthorID=$_REQUEST['AuthorID'];
-    $AuthorID = $_GET['bookid'];
-
-    $slc_Athr = "SELECT * from author where AuthorID='".$AuthorID."'"; 
-    $slc_Athr = $conn -> prepare($slc_Athr);
-    $slc_Athr->execute();
-    $rows = $slc_Athr->fetch();
-    
-    $Name = $rows['Name'];
-    $Surname = $rows['Surname'];
-    $Nationality = $rows['Nationality'];
-    $BirthYear = $rows['BirthYear'];
-    $DeathYear = $rows['DeathYear'];
-
-    var_dump($slc_Athr);
 
 ?>
 <!DOCTYPE HTML>
@@ -57,39 +52,39 @@
 
             <form action ="../../controller/pdoEdit.php" method = "POST">
                 <fieldset></br>
-                     <legend>Authour Detail:</legend>
+                     <legend>Author Detail:</legend>
                             <div class="field">
                                 <label class="label"> Author Name</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="Name" placeholder="" value="<?php echo $row['Name'];?>" pattern="[a-zA-Z]{1,20}" title = "Name must be more than one charactor">
+                                        <input class="input" type="text" name="Name" placeholder="" value="<?php echo $Name;?>" pattern="[a-zA-Z]{1,20}" title = "Name must be more than one charactor">
                                     </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">Surname</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="Surname" placeholder="" value="<?php echo $row['Surname'];?>" pattern="[a-zA-Z]{1,20}" title = "Surname must be more than one charactor">
+                                        <input class="input" type="text" name="Surname" placeholder="" value="<?php echo $Surname;?>" pattern="[a-zA-Z]{1,20}" title = "Surname must be more than one charactor">
                                     </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">Nationality</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="Nationality" placeholder="" value="<?php echo $row['Nationality'];?>" pattern="[a-zA-Z]{1,20}" title = "Nationality must be more than one charactor" >
+                                        <input class="input" type="text" name="Nationality" placeholder="" value="<?php echo $Nationality;?>" pattern="[a-zA-Z]{1,20}" title = "Nationality must be more than one charactor" >
                                     </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">Birth Year</label>
                                     <div class="control">
-                                        <input class="input" type="number" name="BirthYear" placeholder="" value="<?php echo $row['BirthYear'];?>" pattern = "[0-9]{4}">
+                                        <input class="input" type="number" name="BirthYear" placeholder="" value="<?php echo $BirthYear;?>" pattern = "[0-9]{4}">
                                     </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">Death Year</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="DeathYear" placeholder="" value="<?php echo $row['DeathYear'];?>">
+                                        <input class="input" type="text" name="DeathYear" placeholder="" value="<?php echo $DeathYear;?>">
                                     </div>
                             </div>
                 </fieldset></br>
