@@ -77,7 +77,7 @@
 function editBook($AuthorID,$Name,$Surname,$Nationality,$BirthYear,$DeathYear,$BookTitle,$OriginalTitle,$YearofPublication,$Genre,$MillionsSold,$LanguageWritten,$coverImagePath) {  
     global $conn;    
                                 //  Updating record 
-                    $editAuthor = "UPDATE author SET Name=:Name,Surname=:Surname,Nationality=:Nationality,BirthYear=:BirthYear,DeathYear=:DeathYear WHERE AuthourID = :AuthorID ";
+                    $editAuthor = "UPDATE author SET Name=:Name,Surname=:Surname,Nationality=:Nationality,BirthYear=:BirthYear,DeathYear=:DeathYear WHERE AuthorID = :AuthorID ";
                     $stmt = $conn -> prepare($editAuthor);
                     $stmt ->bindValue(':Name',$Name);
                     $stmt ->bindValue(':Surname',$Surname);
@@ -89,7 +89,7 @@ function editBook($AuthorID,$Name,$Surname,$Nationality,$BirthYear,$DeathYear,$B
     //                return $result;
                     echo'hoge hoge';
 
-                    $editBook = "UPDATE book SET BookTitle =:BookTitle,OriginalTitle=:OriginalTitle,YearofPublication=:YearofPublication,Genre=:Genre,MillionsSold=:MillionsSold,LanguageWritten=:LanguageWritten,coverImagePath=:coverImagePath WHERE AuthourID = :AuthorID";
+                    $editBook = "UPDATE book SET BookTitle =:BookTitle,OriginalTitle=:OriginalTitle,YearofPublication=:YearofPublication,Genre=:Genre,MillionsSold=:MillionsSold,LanguageWritten=:LanguageWritten,coverImagePath=:coverImagePath WHERE AuthorID = :AuthorID";
                     $stmt = $conn -> prepare($editBook);
                     $stmt ->bindValue(':BookTitle',$BookTitle);
                     $stmt ->bindValue(':OriginalTitle',$OriginalTitle);
