@@ -94,7 +94,7 @@
                             <div class="field">
                                 <label class="label">BookTitle</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="BookTitle" placeholder="" value="<?php echo $row['BookTitle'];?>" pattern="[a-zA-Z]{1,20}" title = "Book Title must be more than one charactor">
+                                        <input class="input" type="text" name="BookTitle"  value="<?php echo $row['BookTitle'];?>" pattern="[a-zA-Z]{1,20}" title = "Book Title must be more than one charactor">
                                     </div>
                             </div>
                             
