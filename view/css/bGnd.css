@@ -1,7 +1,9 @@
 .input{
-    
-        width: 375px;
-        height: 25px;
-      }
+  width: 375px;
+  height: 25px;
+}
+.book_description{
+  margin-left:20px;
+}
 
       

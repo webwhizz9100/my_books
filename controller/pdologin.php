@@ -49,8 +49,8 @@
             }else
 
               if((empty($_SESSION['user']))){
-               header('location:../index.php');
-                die();
+              //  header('location:../index.php');
+                die(header("location: 404.php"));
 
                 }else{
                         echo "INVALID LOGIN";
