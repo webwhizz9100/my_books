@@ -1,9 +1,56 @@
-.input{
-  width: 375px;
-  height: 25px;
-}
-.book_description{
+
+  /* Full screen */
+  @media (max-width: 979px) {
+     .input {
+     /* width: 375px !important; */
+     max-width: 90% !important;
+     margin-right: 20px !important;
+     margin-left: 20px !important;
+      height: 25px;
+          }   
+        } 
+          /* Tablet screen */
+          @media (max-width: 667px) {
+            .input {
+            /* width: 375px !important; */
+            max-width: 90% !important;
+            /* margin-right: 20px !important; */
+            margin-left: 20px !important;
+             height: 25px !important;
+
+                 }    
+                } 
+                 /* Smartphpne screen */
+                 @media (min-width: 568px) {
+                  .input {
+                  /* width: 375px !important; */
+                  max-width: 90% !important;
+                  /* margin-right: 20px !important; */
+                  margin-left: 20px !important;
+                   height: 25px !important;
+                       } 
+                      }     
+     
+.book_description,.addform,.regform,.editform{
   margin-left:20px;
 }
+.panel {
 
+  background-color: lightgrey;
+  color: rgb(15, 11, 11);
+  /* font-size: 1rem; */
+}
+/* .addform{
+  margin-left:20px;
+} */
+.msg{
+  color: green;
+  font-weight: bold;
+  font-size: large;
+}
+.err{
+  color: red;
+  font-weight: bold;
+  font-size: large;
+}
       

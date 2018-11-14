@@ -1,7 +1,7 @@
 
 <?php
-  require ("../Model/conn.php");
-  require ("../Model/dbFunctions.php");
+  require ("../model/conn.php");
+  require ("../model/dbFunctions.php");
   // require "../model/testInput.php";
   if (!empty([$_POST]))
 
@@ -20,6 +20,7 @@
                   $accessright = $rows["accessright"];
                   $pass = $rows["password"];
                   $user = $rows["username"];
+                  $firstName = $rows["firstName"];
                   $userID = $rows["userID"];
 
                 // print_r($rows["username"]);
@@ -36,6 +37,10 @@
               $_SESSION["firstName"] = $firstName;
               $_SESSION["accessright"] = $accessright;
               $_SESSION["userID"] = $userID;
+
+              // check if session stores variable
+                print_r($_SESSION["firstName"]);
+              
                                                     // $_SESSION["login"] = true;
 
 
@@ -43,17 +48,19 @@
 
 
                                                 //  if((isset($_SESSION['accessrights']) && $_SESSION['accessrights'] == "admin")){
-           header('Location:../View/Pages/viewBooks.php');
+           header('Location:../view/pages/viewBooks.php');
                                                       // echo 'Hello ' .$_SESSION["username"].' you are logged in ';
           // }
             }else
 
               if((empty($_SESSION['user']))){
               //  header('location:../index.php');
+              $_SESSION['err'] = "INVALID LOGIN";
                 die(header("location: 404.php"));
 
                 }else{
-                        echo "INVALID LOGIN";
+                        // echo "INVALID LOGIN";
+                        $_SESSION['err'] = "INVALID LOGIN";
     
                          header('location:../index.php');
 

@@ -13,51 +13,49 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
         <!-- Bulma Version 0.7.1-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
-        <link rel="stylesheet" href="view/css/bGnds.css" type="text/css">
+        <link rel="stylesheet" href="/my_books/view/css/bGnd.css">
     </head>
         <body>
+            <div class= "addform">
 
-            <form action ="../../controller/pdoBook.php" method = "POST">
-            <fieldset></br>
-                     <legend>Authour Detail:</legend>
-                            <div class="field">
-                                <label class="label"> Author Name</label>
-                                    <div class="control">
-                                        <input class="input" type="text" name="Name" placeholder="" value="" pattern="[a-zA-Z]{1,20}" title = "Name must be more than one charactor">
-                                    </div>
-                            </div>
+                <form action ="../../controller/pdoBook.php" method = "POST">
+                            <label class="label">Author Detail</label>    
+                                <div class="field">
+                                    <label class="label"> Author Name</label>
+                                        <div class="control">
+                                            <input class="input" type="text" name="Name" placeholder="" value="" pattern="[a-zA-Z]{1,20}" title = "Name must be more than one charactor">
+                                        </div>
+                                </div>
 
-                            <div class="field">
-                                <label class="label">Surname</label>
-                                    <div class="control">
-                                        <input class="input" type="text" name="Surname" placeholder="" value="" pattern="[a-zA-Z]{1,20}" title = "surname must be more than one charactor">
-                                    </div>
-                            </div>
+                                <div class="field">
+                                    <label class="label">Surname</label>
+                                        <div class="control">
+                                            <input class="input" type="text" name="Surname" placeholder="" value="" pattern="[a-zA-Z]{1,20}" title = "surname must be more than one charactor">
+                                        </div>
+                                </div>
 
-                            <div class="field">
-                                <label class="label">Nationality</label>
-                                    <div class="control">
-                                        <input class="input" type="text" name="Nationality" placeholder="" value="" pattern="[a-zA-Z]{1,20}" title = "Nationality must be more than one charactor">
-                                    </div>
-                            </div>
+                                <div class="field">
+                                    <label class="label">Nationality</label>
+                                        <div class="control">
+                                            <input class="input" type="text" name="Nationality" placeholder="" value="" pattern="[a-zA-Z]{1,20}" title = "Nationality must be more than one charactor">
+                                        </div>
+                                </div>
 
-                            <div class="field">
-                                <label class="label">Birth Year</label>
-                                    <div class="control">
-                                        <input class="input" type="number" name="BirthYear" placeholder="" value="" pattern = "[0-9]{4}">
-                                    </div>
-                            </div>
+                                <div class="field">
+                                    <label class="label">Birth Year</label>
+                                        <div class="control">
+                                            <input class="input" type="number" name="BirthYear" placeholder="" value="" pattern = "[0-9]{4}">
+                                        </div>
+                                </div>
 
-                            <div class="field">
-                                <label class="label">Death Year</label>
-                                    <div class="control">
-                                        <input class="input" type="text" name="DeathYear" placeholder="" value="">
-                                    </div>
-                            </div>
-                            </fieldset></br>
-                <fieldset>
-                    <legend>Book Detail</legend>             
+                                <div class="field">
+                                    <label class="label">Death Year</label>
+                                        <div class="control">
+                                            <input class="input" type="text" name="DeathYear" placeholder="" value="">
+                                        </div></br>
+                            </div>        
 
+                        <label class="label">Book Detail</label>   
                             <div class="field">
                                 <label class="label">BookTitle</label>
                                     <div class="control">
@@ -112,11 +110,12 @@
                                     <div class="control">
                                         <input class="input" type="text" name="coverImagePath" placeholder="">
                                     </div>
-                            </div>
-                </fieldset></br>                  
+                                 </div>
+                  
                         
                         <input type = "hidden" name = "action_type" value = "add">
                         <button class="button  is-block is-info is-large">Submit</button>
+                </div>
             </form>
         </body> 
 </html>

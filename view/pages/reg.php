@@ -11,13 +11,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Register - Mybook</title>
 
+         <!-- Bulma Version 0.7.1-->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-        <!-- Bulma Version 0.7.1-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
-        <link rel="stylesheet" href="view/css/bGnds.css" type="text/css">
+        
+        <link rel="stylesheet" href="/my_books/view/css/bGnd.css">
     </head>
             <body>
-                <form action ="../../Controller/pdoReg.php" method = "POST">
+               <div class = "regform"> 
+                <form action ="../../controller/pdoReg.php" method = "POST">
                 
                 
                 
@@ -26,7 +28,7 @@
                             <div class="control has-icons-left has-icons-right">
                                 <input class="input" type="text" name = "username" pattern="[a-zA-Z]{1,20}" title = "Username must be more than one charactor">
                                 <span class="icon is-small is-left">
-                                <i class="fas fa-user"></i>
+                                <!-- <i class="fas fa-user"></i> -->
                                 </span> 
                                 
                                 </span>
@@ -44,7 +46,7 @@
                                     <div class="control has-icons-left">
                                         <input class="input" type="email" name = "email" placeholder="" pattern = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
                                             <span class="icon is-small is-left">
-                                                <i class="fas fa-envelope"></i>
+                                                <!-- <i class="fas fa-envelope"></i> -->
                                             </span>
                                         <span class="icon is-small is-right">
                                     </span>
@@ -69,10 +71,12 @@
                                         <input class="input" type="text" name = "accessright" placeholder="" maxlength="5">
                                     </div>
                             </div>
+                            </br>
                         <input type = "hidden" name = "action_type" value = "add">
                         <button class="button  is-block is-info is-large">Submit</button>
               
                     </form>
+                </div>    
             </body> 
 </html>
 

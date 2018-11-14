@@ -1,6 +1,6 @@
 <?php
-require("../Model/conn.php");
-require("../Model/dbFunctions.php");
+require("../model/conn.php");
+require("../model/dbFunctions.php");
 
 if (!empty([$_POST])){
 

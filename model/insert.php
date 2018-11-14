@@ -87,7 +87,7 @@ function editBook($AuthorID,$Name,$Surname,$Nationality,$BirthYear,$DeathYear,$B
                     $stmt ->bindValue(':AuthorID',$AuthorID);
                     $result = $stmt ->execute();
     //                return $result;
-                    echo'hoge hoge';
+
 
                     $editBook = "UPDATE book SET BookTitle =:BookTitle,OriginalTitle=:OriginalTitle,YearofPublication=:YearofPublication,Genre=:Genre,MillionsSold=:MillionsSold,LanguageWritten=:LanguageWritten,coverImagePath=:coverImagePath WHERE AuthorID = :AuthorID";
                     $stmt = $conn -> prepare($editBook);
@@ -102,7 +102,8 @@ function editBook($AuthorID,$Name,$Surname,$Nationality,$BirthYear,$DeathYear,$B
                     $stmt ->bindValue(':AuthorID',$AuthorID);
                     $result = $stmt ->execute();
 
-                    echo'call shotgun';
+                    $_SESSION['msg'] = "Book has added";
+                    header('location:../view/pages/viewBooks.php');
                 }
 
                    

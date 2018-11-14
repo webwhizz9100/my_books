@@ -2,6 +2,7 @@
 require("../model/conn.php");
 require("../model/insert.php");
 
+session_start();
 
 if (!empty([$_POST])){
 
@@ -30,6 +31,7 @@ if (!empty([$_POST])){
 //           $querySuccess
                  //header('location:../index.php');
         // echo $querySuccess ;
+        $_SESSION['msg'] = "book has added";
         header('location:../view/pages/viewBooks.php');
             } 
         }   

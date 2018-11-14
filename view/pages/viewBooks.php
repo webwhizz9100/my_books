@@ -1,7 +1,7 @@
 
 <?php
     include'header.php';
-    // include'nav.php';
+    include'nav.php';
 
     // session_start();7
 
@@ -23,11 +23,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <p class="title has-text-centered">Browse Bookshelf</p>
    
-<div class="container">    
-    <div class="row">
-        <!-- <LOOP starts> -->
+<body>  
+    <p class="title has-text-centered">Browse Bookshelf</p>
+    <div class="container">   
+        <?php
+            include'../../model/displayMsg.php';
+        ?> 
+        <div class="row">
+            <!-- <LOOP starts> -->
 
         <?php
             include'../../controller/bookdb.php'; 
@@ -37,8 +41,8 @@
         else{
             foreach($result as $row){
         ?>
-            <div class="col-md-4">
-                <div class="panel panel-primary">
+            <div class="col-md-3">
+                <div class="panel panel-primary bg-secondary text-white">
                     <figure>
                         <div class="panel-body"><img src="<?php 
                             if(isset($row['coverImagePath'])){
@@ -54,8 +58,8 @@
                         <?php echo $row['BookTitle']; ?><br>
                         <?php echo $row['MillionsSold']." ". "Millions Sold";?><br>
                         <?php echo $row['YearofPublication']." ". "Year Published";?><br>         
-                        <a href="http://localhost:7888/my_books/view/pages/editBook.php?bookid=<?php echo $row['BookID']?>">EDIT</a><br>
-                        <a href="http://localhost:7888/my_books/view/pages/delete.php?bookid=<?php echo $row['BookID']?>">DELETE</a><br>
+                        <a href="editBook.php?bookid=<?php echo $row['BookID']?>">EDIT</a><br>
+                        <a href="delete.php?bookid=<?php echo $row['BookID']?>">DELETE</a><br>
                     </div>
                 </div>
             </div>

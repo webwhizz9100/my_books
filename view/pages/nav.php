@@ -1,4 +1,4 @@
-<body>
+
     <!---start NAV-->
     <nav class="navbar is-dark">
         <div class="navbar-brand">
@@ -33,20 +33,21 @@
                 <?php
                     session_start();
                     // print_r($_SESSION);
+                    // if($_SESSION['firstname']== "admin"
                     if($_SESSION['accessright']== "admin"){
 
-                    echo'<a class="navbar-item" href="http://localhost:7888/my_books/View/Pages/addBook.php">
+                    echo'<a class="navbar-item" href="addBook.php">
                         Add book
                      </a>' ;
                     
-                     echo'<a class="navbar-item" href="http://localhost:7888/my_books/View/Pages/viewBooks.php">
+                     echo'<a class="navbar-item" href="viewBooks.php">
                          View Book
                      </a>';
-                    echo ' <a class="navbar-item" href="http://localhost:7888/my_books/view/pages/reg.php">
+                    echo ' <a class="navbar-item" href="reg.php">
                          Register
                      </a>';
                     
-                    echo' <a class="navbar-item" href="http://localhost:7888/my_books/controller/logout.php">
+                    echo' <a class="navbar-item" href="../../controller/logout.php">
                          Log out
                      </a>';
 
@@ -60,15 +61,15 @@
                     // session_start();
                     if($_SESSION['accessright'] == "user"){
 
-                    echo'<a class="navbar-item" href="http://localhost:7888/my_books/View/Pages/addBook.php">
+                    echo'<a class="navbar-item" href="addBook.php">
                         Add book
                      </a>' ;
                     
-                     echo'<a class="navbar-item" href="http://localhost:7888/my_books/View/Pages/viewBooks.php">
+                     echo'<a class="navbar-item" href="viewBooks.php">
                          View Book
                      </a>';
                     
-                    echo' <a class="navbar-item" href="http://localhost:7888/my_books/controller/logout.php">
+                    echo' <a class="navbar-item" href="../../controller/logout.php">
                          Log out
                      </a>';
 
@@ -77,11 +78,6 @@
 
                       }
                 ?>
-            
-               
-                
-                
-                
                 </div>
             </div>
 

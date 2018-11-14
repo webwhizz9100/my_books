@@ -2,6 +2,8 @@
 require("../model/conn.php");
 require("../model/insert.php");
 
+session_start();
+
 
 if (!empty($_POST['AuthorID'])){
 
@@ -28,8 +30,11 @@ if (!empty($_POST['AuthorID'])){
             $querySuccess = editBook($AuthorID,$Name,$Surname,$Nationality,$BirthYear,$DeathYear,$BookTitle,$OriginalTitle,$YearofPublication,$Genre,$MillionsSold,$LanguageWritten,$coverImagePath);
 //            echo $querySuccess;
 //           $querySuccess
-                 //header('location:../index.php');
-        echo 'book has updated';       
+
+                 $_SESSION['msg'] = "book has updated";
+                 header('location:../view/pages/viewBooks.php');
+
+        // echo 'book has updated';       
         // echo $querySuccess ;
         // die("error");
             } 

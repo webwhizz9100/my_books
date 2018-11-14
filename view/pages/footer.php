@@ -5,15 +5,15 @@
                     <a class="navbar-item" href="http://localhost:7888/my_books/view/pages/disclaimer.php">
                     Disclaimer
                         </a>
-                    <a class="navbar-item" href="http://localhost:7888/my_books/view/pages/retn.php">
-                        Return/Refund Policy
-                    </a> 
-                    <a class="navbar-item" href="http://localhost:7888/my_books/view/pages/ap.php">
-                    Airport pickup service
-                    </a>
-                    <a class="navbar-item" href="http://localhost:7888/my_books/View/Pages/mile.php">
-                        Earn Mileage 
-                    </a>
+                            <a class="navbar-item" href="http://localhost:7888/my_books/view/pages/retn.php">
+                                Return/Refund Policy
+                            </a> 
+                <a class="navbar-item" href="http://localhost:7888/my_books/view/pages/ap.php">
+                Airport pickup service
+                </a>
+            <a class="navbar-item" href="http://localhost:7888/my_books/View/Pages/mile.php">
+            Earn Mileage 
+            </a>
 
 </div>            
         <div class="container">
@@ -22,12 +22,12 @@
                     <a href="">
                         <i class="fab fa-facebook-square fa-2x"></i>
                     </a>
-                    <a href="">
-                        <i class="fab fa-twitter-square fa-2x"></i>
-                    </a>
-                    <a href="">
-                        <i class="fab fa-instagram fa-2x"></i>
-                    </a>
+                        <a href="">
+                            <i class="fab fa-twitter-square fa-2x"></i>
+                        </a>
+                            <a href="">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
                     <a href="">
                         <i class="fab fa-snapchat fa-2x"></i>
                     </a>
