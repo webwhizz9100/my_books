@@ -5,6 +5,7 @@
         try{
         
             // $BookID = $_GET['bookid'];
+            session_start();
 
             if(isset($_GET['bookid'])) {
 
@@ -30,10 +31,11 @@
                 if (!$stmt->execute()){
                     echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
                 }else{
-                    echo"Book has deleted";
+                    // echo"Book has deleted";
                     $conn -> commit();
-                
-                // header('location: viewBooks.php');
+                    $_SESSION['msg'] = "book has deleted";
+                    header('location: viewBooks.php');
+
                 
                 }
 

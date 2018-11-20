@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="/my_books/view/css/bGnd.css">
     </head>
             <body>
+            <p class="title has-text-centered">Register Member</p>
                <div class = "regform"> 
                 <form action ="../../controller/pdoReg.php" method = "POST">
                 
@@ -66,7 +67,7 @@
                                 </div>
                         </div>
                             <div class="field">
-                                <label class="label">accessright</label>
+                                <label class="label">Accessright</label>
                                     <div class="control">
                                         <input class="input" type="text" name = "accessright" placeholder="" maxlength="5">
                                     </div>

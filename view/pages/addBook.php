@@ -16,14 +16,15 @@
         <link rel="stylesheet" href="/my_books/view/css/bGnd.css">
     </head>
         <body>
+        <br><p class="title has-text-centered is-size-2">Add Book</p>
             <div class= "addform">
 
                 <form action ="../../controller/pdoBook.php" method = "POST">
-                            <label class="label">Author Detail</label>    
+                            <label class="label has-text-info is-size-3">Author Detail</label>    
                                 <div class="field">
                                     <label class="label"> Author Name</label>
                                         <div class="control">
-                                            <input class="input" type="text" name="Name" placeholder="" value="" pattern="[a-zA-Z]{1,20}" title = "Name must be more than one charactor">
+                                            <input class="input" type="text" name="Name" placeholder="" value=""  title = "Name must be more than one charactor">
                                         </div>
                                 </div>
 
@@ -55,7 +56,7 @@
                                         </div></br>
                             </div>        
 
-                        <label class="label">Book Detail</label>   
+                        <label class="label has-text-info is-size-3">Book Detail</label>   
                             <div class="field">
                                 <label class="label">BookTitle</label>
                                     <div class="control">

@@ -49,9 +49,10 @@
         <link rel="stylesheet" href="view/css/bGnds.css" type="text/css">
     </head>
         <body>
+        <br><p class="title has-text-centered is-size-2">Edit Book</p>
             <div class = "editform">
                 <form action ="../../controller/pdoEdit.php" method = "POST">
-                    </br><label class="label">Author Detail</label>    
+                    </br><label class="label has-text-info is-size-3">Author Detail</label>    
                                 <div class="field">
                                     <label class="label"> Author Name</label>
                                         <div class="control">
@@ -86,7 +87,7 @@
                                             <input class="input" type="text" name="DeathYear" placeholder="" value="<?php echo $DeathYear;?>">
                                         </div>
                                 </div></br>
-                            <label class="label">Book Detail</label>             
+                            <label class="label has-text-info is-size-3">Book Detail</label>             
 
                                 <div class="field">
                                     <label class="label">BookTitle</label>

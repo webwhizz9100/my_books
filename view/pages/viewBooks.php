@@ -41,8 +41,8 @@
         else{
             foreach($result as $row){
         ?>
-            <div class="col-md-3">
-                <div class="panel panel-primary bg-secondary text-white">
+            <div class="col-lg-3">
+                <div class="panel panel-primary">
                     <figure>
                         <div class="panel-body"><img src="<?php 
                             if(isset($row['coverImagePath'])){
@@ -54,12 +54,12 @@
                     </figure>
                     <div class="book_description">
                     <!-- <data> -->
-                        <?php echo  $row['Name']." ".$row['Surname'] ?><br>
-                        <?php echo $row['BookTitle']; ?><br>
-                        <?php echo $row['MillionsSold']." ". "Millions Sold";?><br>
-                        <?php echo $row['YearofPublication']." ". "Year Published";?><br>         
-                        <a href="editBook.php?bookid=<?php echo $row['BookID']?>">EDIT</a><br>
-                        <a href="delete.php?bookid=<?php echo $row['BookID']?>">DELETE</a><br>
+                        <b><?php echo $row['Name']." ".$row['Surname'] ?><br></b>
+                        <i><?php echo $row['BookTitle']; ?><br></i>
+                        <i style="color:MidnightBlue;"><?php echo $row['MillionsSold']." ". "Millions Sold";?><br></i>
+                        <i style="color:MidnightBlue;"><?php echo $row['YearofPublication']." ". "Year Published";?><br></i>        
+                        <b><a href="editBook.php?bookid=<?php echo $row['BookID']?>">EDIT</a></b><br>
+                        <b><a href="delete.php?bookid=<?php echo $row['BookID']?>">DELETE</a></b><br>
                     </div>
                 </div>
             </div>

@@ -31,10 +31,17 @@
         <div id="navbarExampleTransparentExample" class="navbar-menu">
             <div class="navbar-start">
                 <?php
-                    session_start();
-                    // print_r($_SESSION);
-                    // if($_SESSION['firstname']== "admin"
-                    if($_SESSION['accessright']== "admin"){
+                    session_start();?>
+
+                    <?php
+
+
+                    // $_SESSION["accessright"] = $rows["accessright"];
+                    //  print_r($rows["accessright"]);
+                    
+                    if($_SESSION['accessright'] == "admin"){
+
+                            var_dump($_SESSION['accessright']);
 
                     echo'<a class="navbar-item" href="addBook.php">
                         Add book
@@ -52,7 +59,7 @@
                      </a>';
 
                     //  session_destroy();
-                        
+                    // die();
 
                       }
                     
@@ -60,6 +67,8 @@
                  <?php
                     // session_start();
                     if($_SESSION['accessright'] == "user"){
+                        // if($_SESSION['user']){
+
 
                     echo'<a class="navbar-item" href="addBook.php">
                         Add book
@@ -74,6 +83,7 @@
                      </a>';
 
                     //  session_destroy();
+                    // die();
                         
 
                       }

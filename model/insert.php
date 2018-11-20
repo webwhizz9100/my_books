@@ -5,7 +5,7 @@
     $data = htmlspecialchars($data);
     return $data;
 }    ?> 
-
+    <!-- INSERTION -->
     <?php
     // calling function
     function addBook($Name,$Surname,$Nationality,$BirthYear,$DeathYear,$BookTitle,$OriginalTitle,$YearofPublication,$Genre,$MillionsSold,$LanguageWritten,$AuthorID,$coverImagePath){
@@ -49,8 +49,8 @@
                         header("location:../index.php");
                         exit();
                     }
-                    
-                    $logsql = "INSERT INTO changelog (dateUpdtd,dateCreated,BookID,userID) VALUES (CURDATE(),CURDATE(), :bookID, :userID)";
+                    // Creating book log
+                    $logsql = " INSERT INTO changelog (dateUpdtd,dateCreated,BookID,userID) VALUES (NOW(),NOW(), :bookID, :userID)";
 
                     $stmt = $conn -> prepare($logsql);
                     $stmt ->bindValue(':bookID',$lastbookid);
@@ -74,6 +74,9 @@
             echo $ex->getMessage();
         }    
 }  
+
+    // UPDATING
+
 function editBook($AuthorID,$Name,$Surname,$Nationality,$BirthYear,$DeathYear,$BookTitle,$OriginalTitle,$YearofPublication,$Genre,$MillionsSold,$LanguageWritten,$coverImagePath) {  
     global $conn;    
                                 //  Updating record 
@@ -102,11 +105,31 @@ function editBook($AuthorID,$Name,$Surname,$Nationality,$BirthYear,$DeathYear,$B
                     $stmt ->bindValue(':AuthorID',$AuthorID);
                     $result = $stmt ->execute();
 
+                    $getBookID = "SELECT BookID FROM book WHERE AuthorID = :AuthorID";
+                    $stmt = $conn -> prepare($getBookID);
+                    $stmt -> bindValue(":AuthorID", $AuthorID);
+                    $stmt -> execute();
+                    $row = $stmt -> fetch();
+                    $bookID = $row["BookID"];
+
+
                     $_SESSION['msg'] = "Book has added";
-                    header('location:../view/pages/viewBooks.php');
+                    // header('location:../view/pages/viewBooks.php');
+
+                    return $bookID;
                 }
 
-                   
-         
-            
+                function updateLog($bookID,$userID){
+                    global $conn;
+                    $logsql = " UPDATE  changelog SET dateUpdtd = NOW(), userID = :userID WHERE BookID = :bookID";
+                    $stmt = $conn->prepare($logsql);
+                    $stmt->bindValue(':bookID', $bookID);
+                    $stmt->bindValue(':userID', $userID);
+                    $stmt->execute();
+                    // $conn->commit();
+
+                    // die("update passed");
+                }
+
+             
      ?>     

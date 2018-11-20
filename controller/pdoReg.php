@@ -2,6 +2,8 @@
 require("../model/conn.php");
 require("../model/dbFunctions.php");
 
+session_start();
+
 if (!empty([$_POST])){
 
     //input sanitation via test_user input_funciton
@@ -23,8 +25,10 @@ if (!empty([$_POST])){
 //            echo $querySuccess;
 //           $querySuccess
                  //header('location:../index.php');
-        echo $querySuccess ;
-        die();
+        // echo $querySuccess ;
+        // die();
+        $_SESSION['msg'] = "Member has  added";
+        header('location:../view/pages/viewBooks.php');
             } 
         }    
         

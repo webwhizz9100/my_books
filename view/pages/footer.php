@@ -2,18 +2,18 @@
    <footer class="footer">
         <div id="navbarExampleTransparentExample" class="navbar-menu">
                 <div class="navbar-start has-text-centered">
-                    <a class="navbar-item" href="http://localhost:7888/my_books/view/pages/disclaimer.php">
+                    <a class="navbar-item" href="disclaimer.php">
                     Disclaimer
                         </a>
-                            <a class="navbar-item" href="http://localhost:7888/my_books/view/pages/retn.php">
+                            <a class="navbar-item" href="retn.php">
                                 Return/Refund Policy
                             </a> 
-                <a class="navbar-item" href="http://localhost:7888/my_books/view/pages/ap.php">
-                Airport pickup service
-                </a>
-            <a class="navbar-item" href="http://localhost:7888/my_books/View/Pages/mile.php">
-            Earn Mileage 
-            </a>
+                                <a class="navbar-item" href="ap.php">
+                                 Airport pickup service
+                                </a>
+                                    <a class="navbar-item" href="mile.php">
+                                        Earn Mileage 
+                                    </a>
 
 </div>            
         <div class="container">

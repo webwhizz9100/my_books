@@ -26,10 +26,11 @@ if (!empty($_POST['AuthorID'])){
     {
     //    echo $_POST['action_type'];
       if($_POST['action_type']=='add'){
+        
 //            echo 'Adding user';
-            $querySuccess = editBook($AuthorID,$Name,$Surname,$Nationality,$BirthYear,$DeathYear,$BookTitle,$OriginalTitle,$YearofPublication,$Genre,$MillionsSold,$LanguageWritten,$coverImagePath);
+            $bookID = editBook($AuthorID,$Name,$Surname,$Nationality,$BirthYear,$DeathYear,$BookTitle,$OriginalTitle,$YearofPublication,$Genre,$MillionsSold,$LanguageWritten,$coverImagePath);
+            updateLog($bookID, $_SESSION["userID"]);
 //            echo $querySuccess;
-//           $querySuccess
 
                  $_SESSION['msg'] = "book has updated";
                  header('location:../view/pages/viewBooks.php');
