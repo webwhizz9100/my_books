@@ -59,7 +59,7 @@
                         <i style="color:MidnightBlue;"><?php echo $row['MillionsSold']." ". "Millions Sold";?><br></i>
                         <i style="color:MidnightBlue;"><?php echo $row['YearofPublication']." ". "Year Published";?><br></i>        
                         <b><a href="editBook.php?bookid=<?php echo $row['BookID']?>">EDIT</a></b><br>
-                        <b><a href="delete.php?bookid=<?php echo $row['BookID']?>">DELETE</a></b><br>
+                        <b><a href="../../model/delete.php?bookid=<?php echo $row['BookID']?>">DELETE</a></b><br>
                     </div>
                 </div>
             </div>

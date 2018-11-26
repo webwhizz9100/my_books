@@ -1,6 +1,6 @@
 <?php
 require("../model/conn.php");
-require("../model/insert.php");
+require("../model/dbFunctions.php");
 
 session_start();
 
@@ -31,7 +31,7 @@ if (!empty([$_POST])){
 //           $querySuccess
                  //header('location:../index.php');
         // echo $querySuccess ;
-        $_SESSION['msg'] = "book has added";
+        // $_SESSION['msg'] = "book has added";
         header('location:../view/pages/viewBooks.php');
             } 
         }   

@@ -1,6 +1,6 @@
 <?php
 
-    require('../../model/conn.php');
+    require('conn.php');
     global $conn;
         try{
         
@@ -34,7 +34,7 @@
                     // echo"Book has deleted";
                     $conn -> commit();
                     $_SESSION['msg'] = "book has deleted";
-                    header('location: viewBooks.php');
+                    header('location: ../view/pages/viewBooks.php');
 
                 
                 }

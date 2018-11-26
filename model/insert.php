@@ -15,18 +15,34 @@
                     
                     $conn->beginTransaction();
                     
-                    $authorsql = "INSERT INTO author(Name,Surname,Nationality,BirthYear,DeathYear) VALUES (:Name,:Surname,:Nationality,:BirthYear,:DeathYear)";
-                    $stmt = $conn -> prepare($authorsql);
+                    //Check if there is any author has the information
+                    $authorChecksql = "SELECT * FROM author WHERE Name = :Name AND Surname = :Surname AND BirthYear = :BirthYear";
+                    $stmt = $conn -> prepare($authorChecksql);
                     $stmt ->bindValue(':Name',$Name);
                     $stmt ->bindValue(':Surname',$Surname);
-                    $stmt ->bindValue(':Nationality',$Nationality);
                     $stmt ->bindValue(':BirthYear',$BirthYear);
-                    $stmt ->bindValue(':DeathYear',$DeathYear);
-                    $result = $stmt ->execute();
-    //                return $result;
-                    $lastuserID = $conn -> lastInsertID();
+                    $stmt ->execute();
+                    $result = $stmt -> fetch();
 
-
+                    //If there is none, insert a new author
+                    if(!$result){
+                        $authorsql = "INSERT INTO author(Name,Surname,Nationality,BirthYear,DeathYear) VALUES (:Name,:Surname,:Nationality,:BirthYear,:DeathYear)";
+                        $stmt = $conn -> prepare($authorsql);
+                        $stmt ->bindValue(':Name',$Name);
+                        $stmt ->bindValue(':Surname',$Surname);
+                        $stmt ->bindValue(':Nationality',$Nationality);
+                        $stmt ->bindValue(':BirthYear',$BirthYear);
+                        $stmt ->bindValue(':DeathYear',$DeathYear);
+                        $result = $stmt ->execute();
+                        $AuthorID = $conn -> lastInsertID();    
+                        $_SESSION['msg'] = "Book has  added";
+                    
+                    }else{
+                        $AuthorID = $result["AuthorID"];
+                        $_SESSION['msg'] = "Book has added and author already exist";
+                    
+                    }
+        
                     $booksql = "INSERT INTO book(BookTitle,OriginalTitle,YearofPublication,Genre,MillionsSold,LanguageWritten,AuthorID,coverImagePath) VALUES (:BookTitle,:OriginalTitle,:YearofPublication,:Genre,:MillionsSold,:LanguageWritten,:AuthorID,:coverImagePath)";
                     $stmt = $conn -> prepare($booksql);
                     $stmt ->bindValue(':BookTitle',$BookTitle);
@@ -37,7 +53,6 @@
                     $stmt ->bindValue(':LanguageWritten',$LanguageWritten);
                     $stmt ->bindValue(':AuthorID',$AuthorID);
                     $stmt ->bindValue(':coverImagePath',$coverImagePath);
-                    $stmt ->bindValue(':AuthorID',$lastuserID);
                     $stmt ->execute();
                     $lastbookid = $conn -> lastInsertID();
                     

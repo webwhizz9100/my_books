@@ -17,7 +17,7 @@
         </p></br>
         <p class ="is-size-3">Online security /scams and malwares
         </p></br>
-        <p"is-size-5">
+        <p class ="is-size-5">
         Mybook  will take appropriate cautious to represent safe website.
         However this can not be holeproof. Please use your own safe measurement when using the site.</p>   
          <p class ="is-size-3">Delivery</p>

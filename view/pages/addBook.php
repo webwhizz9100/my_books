@@ -19,40 +19,40 @@
         <br><p class="title has-text-centered is-size-2">Add Book</p>
             <div class= "addform">
 
-                <form action ="../../controller/pdoBook.php" method = "POST">
+                <form action ="../../controller/pdobook.php" method = "POST">
                             <label class="label has-text-info is-size-3">Author Detail</label>    
                                 <div class="field">
                                     <label class="label"> Author Name</label>
                                         <div class="control">
-                                            <input class="input" type="text" name="Name" placeholder="" value=""  title = "Name must be more than one charactor">
+                                            <input class="input" type="text" name="Name" placeholder="" value="" pattern="[a-zA-Z ]{1,20}" title = "Name must be more than one alphabet charactor" required>
                                         </div>
                                 </div>
 
                                 <div class="field">
                                     <label class="label">Surname</label>
                                         <div class="control">
-                                            <input class="input" type="text" name="Surname" placeholder="" value="" pattern="[a-zA-Z]{1,20}" title = "surname must be more than one charactor">
+                                            <input class="input" type="text" name="Surname" placeholder="" value="" pattern="[a-zA-Z ]{1,20}" title = "surname must be more than one alphabet charactor" required>
                                         </div>
                                 </div>
 
                                 <div class="field">
                                     <label class="label">Nationality</label>
                                         <div class="control">
-                                            <input class="input" type="text" name="Nationality" placeholder="" value="" pattern="[a-zA-Z]{1,20}" title = "Nationality must be more than one charactor">
+                                            <input class="input" type="text" name="Nationality" placeholder="" value="" pattern="[a-zA-Z ]{1,20}" title = "Nationality must be more than one alphabet charactor" required>
                                         </div>
                                 </div>
 
                                 <div class="field">
                                     <label class="label">Birth Year</label>
                                         <div class="control">
-                                            <input class="input" type="number" name="BirthYear" placeholder="" value="" pattern = "[0-9]{4}">
+                                            <input class="input" type="number" name="BirthYear" placeholder="" value="" pattern = "[0-9]{4}" required>
                                         </div>
                                 </div>
 
                                 <div class="field">
                                     <label class="label">Death Year</label>
                                         <div class="control">
-                                            <input class="input" type="text" name="DeathYear" placeholder="" value="">
+                                            <input class="input" type="text" name="DeathYear" placeholder="" value="" required>
                                         </div></br>
                             </div>        
 
@@ -60,49 +60,49 @@
                             <div class="field">
                                 <label class="label">BookTitle</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="BookTitle" placeholder="" value=""  pattern="[a-zA-Z]{1,20}" title = "Title must be more than one charactor">
+                                        <input class="input" type="text" name="BookTitle" placeholder="" value=""  pattern="[a-zA-Z ]{1,20}" title = "Title must be more than one alphabet charactor" required>
                                     </div>
                             </div>
                             
                             <div class="field">
                                 <label class="label">OriginalTitle</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="OriginalTitle" placeholder="" pattern="[a-zA-Z]{1,20}" title = "Original title must be more than one charactor">
+                                        <input class="input" type="text" name="OriginalTitle" placeholder="" pattern="[a-zA-Z ]{1,20}" title = "Original title must be more than one  alphabet charactor" required>
                                     </div>    
                             </div>
 
                             <div class="field">
                                 <label class="label">Year Of Publication</label>
                                     <div class="control">
-                                        <input class="input" type="number" pattern = "[0-9]{4}" name= "YearofPublication" placeholder= ""  >
+                                        <input class="input" type="number" pattern = "[0-9]{4}" name= "YearofPublication" placeholder= "" required >
                                     </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">Genre</label>
                                     <div class="control">
-                                        <input class="input" type="text"  name="Genre" placeholder="" pattern="[a-zA-Z]{1,20}" title = "Genre  must be more than one charactor">
+                                        <input class="input" type="text"  name="Genre" placeholder="" pattern="[a-zA-Z]{1,20}" title = "Genre  must be more than one alphabet charactor" required>
                                     </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">Millions Sold</label>
                                     <div class="control">
-                                        <input class="input" type="number" pattern = "[0-9]{4}" name="MillionsSold" placeholder="" >
+                                        <input class="input" type="number" pattern = "[0-9]{4}" name="MillionsSold" placeholder="" required>
                                     </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">Language Written</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="LanguageWritten" placeholder="" pattern="[a-zA-Z]{1,20}" title = "Language must be more than one charactor">
+                                        <input class="input" type="text" name="LanguageWritten" placeholder="" pattern="[a-zA-Z]{1,20}" title = "Language must be more than one alphabet charactor" required>
                                     </div>
                             </div>   
 
                             <div class="field">
-                                <label class="label">AuthorID</label>
-                                    <div class="control">
-                                        <input class="input" name="AuthorID" type="number" pattern = "[0-9]" placeholder="" >
+                                 <!--<label class="label">AuthorID</label>-->
+                                 <div class="control">
+                                        <input class="input" name="AuthorID" type="hidden" pattern = "[0-9]" placeholder="" >
                                     </div>
                             </div>
 

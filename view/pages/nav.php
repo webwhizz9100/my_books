@@ -4,7 +4,7 @@
         <div class="navbar-brand">
             <a class="navbar-item">
                 
-                <img src="../images/pics/logo.gif" width="112" height="">
+                <img src="../images/pics/logo.gif" width="" height="">
 
             <div class="navbar-burger burger" data-target="navbarExampleTransparentExample"> 
                 <span></span>
@@ -31,7 +31,7 @@
         <div id="navbarExampleTransparentExample" class="navbar-menu">
             <div class="navbar-start">
                 <?php
-                    session_start();?>
+                    //session_start();?>
 
                     <?php
 
@@ -41,7 +41,7 @@
                     
                     if($_SESSION['accessright'] == "admin"){
 
-                            var_dump($_SESSION['accessright']);
+                          echo "<b> You are access as&nbsp&nbsp&nbsp</b>". $_SESSION['accessright'];
 
                     echo'<a class="navbar-item" href="addBook.php">
                         Add book
@@ -68,6 +68,7 @@
                     // session_start();
                     if($_SESSION['accessright'] == "user"){
                         // if($_SESSION['user']){
+                            echo "<b> You are access as&nbsp&nbsp&nbsp</b>". $_SESSION['accessright'];
 
 
                     echo'<a class="navbar-item" href="addBook.php">
