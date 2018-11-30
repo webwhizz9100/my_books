@@ -53,14 +53,15 @@
           // }
             }else
 
-              if((empty($_SESSION['user']))){
-              //  header('location:../index.php');
-              $_SESSION['err'] = "INVALID LOGIN";
-                die(header("location: 404.php"));
+              if((empty($_SESSION['user'])))
+              // {
+              // //  header('location:../index.php');
+              // $_SESSION['err'] = "INVALID LOGIN";
+              //   die(header("location: 404.php"));
 
-                }else{
+              //   }else{
                         // echo "INVALID LOGIN";
-                        $_SESSION['err'] = "INVALID LOGIN";
+                      {$_SESSION['err'] = "INVALID LOGIN";
     
                          header('location:../index.php');
 

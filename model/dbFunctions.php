@@ -8,6 +8,10 @@
 
 <!-- INSERTION -->
         <?php 
+        if(!isset($_SESSION)) 
+        { 
+            session_start(); 
+        } 
         function addUser($email,$firstName,$lastName,$accessright,$username,$password){
 
    
@@ -44,9 +48,9 @@
         }
         
 ?>  
-    
+
 <?php
-    // calling function
+
     function addBook($Name,$Surname,$Nationality,$BirthYear,$DeathYear,$BookTitle,$OriginalTitle,$YearofPublication,$Genre,$MillionsSold,$LanguageWritten,$AuthorID,$coverImagePath){
                 
                 global $conn;
@@ -54,8 +58,8 @@
                     
                     $conn->beginTransaction();
                     
-                    //Check if there is any author has the information
-                    $authorChecksql = "SELECT * FROM author WHERE Name = :Name AND Surname = :Surname AND BirthYear = :BirthYear";
+                    //Check if author exist
+                    $authorChecksql = "SELECT * FROM author WHERE `Name` LIKE :Name AND Surname LIKE :Surname AND BirthYear = :BirthYear";  
                     $stmt = $conn -> prepare($authorChecksql);
                     $stmt ->bindValue(':Name',$Name);
                     $stmt ->bindValue(':Surname',$Surname);
@@ -65,7 +69,7 @@
 
                     //If there is none, insert a new author
                     if(!$result){
-                        $authorsql = "INSERT INTO author(Name,Surname,Nationality,BirthYear,DeathYear) VALUES (:Name,:Surname,:Nationality,:BirthYear,:DeathYear)";
+                        $authorsql = "INSERT INTO author(`Name`,Surname,Nationality,BirthYear,DeathYear) VALUES (:Name,:Surname,:Nationality,:BirthYear,:DeathYear)";
                         $stmt = $conn -> prepare($authorsql);
                         $stmt ->bindValue(':Name',$Name);
                         $stmt ->bindValue(':Surname',$Surname);
@@ -95,7 +99,7 @@
                     $stmt ->execute();
                     $lastbookid = $conn -> lastInsertID();
                     
-                    session_start();
+                    // session_start();
                     // it does; output the message
                     $userID = $_SESSION['userID'];
           
@@ -186,5 +190,56 @@ function editBook($AuthorID,$Name,$Surname,$Nationality,$BirthYear,$DeathYear,$B
                 }
 
              
-     ?>     
+     ?>   
+      <!--DELETE book  -->
+     <?php
+
+require('conn.php');
+global $conn;
+    try{
+    
+        // $BookID = $_GET['bookid'];
+        // session_start();
+
+        if(isset($_GET['bookid'])) {
+
+            $BookID = $_GET['bookid'];
+            $conn->beginTransaction();
+    
+            // // deleting record 
+            $del_log = ("DELETE FROM changelog WHERE BookID = :bookid");
+           
+
+            $stmt = $conn->prepare($del_log);
+            $stmt ->bindValue(':bookid',$BookID);
+
+            $result = $stmt ->execute();
+
+              // added code  up to line 28
+            $del_sql = ("DELETE FROM book WHERE BookID = :bookid");
+
+            $stmt = $conn->prepare($del_sql);
+            $stmt ->bindValue(':bookid',$BookID);
+            // $conn -> commit();
+
+            if (!$stmt->execute()){
+                echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+            }else{
+                // echo"Book has deleted";
+                $conn -> commit();
+                $_SESSION['msg'] = "book has deleted";
+                header('location: ../view/pages/viewBooks.php');
+
+            
+            }
+
+
+        }
+        } catch (PDOexception $ex){
+                $conn->rollBack ();
+            echo $ex->getMessage();
+        }  
+
+?>
+
   

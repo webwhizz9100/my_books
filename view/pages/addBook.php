@@ -3,7 +3,7 @@
     include'nav.php';
 ?>
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,7 +24,7 @@
                                 <div class="field">
                                     <label class="label"> Author Name</label>
                                         <div class="control">
-                                            <input class="input" type="text" name="Name" placeholder="" value="" pattern="[a-zA-Z ]{1,20}" title = "Name must be more than one alphabet charactor" required>
+                                            <input class="input" type="text" name="Name" placeholder="" value="" pattern="[a-zA-Z .,']{1,20}" title = "Name must be more than one alphabet charactor" required>
                                         </div>
                                 </div>
 
@@ -45,7 +45,7 @@
                                 <div class="field">
                                     <label class="label">Birth Year</label>
                                         <div class="control">
-                                            <input class="input" type="number" name="BirthYear" placeholder="" value="" pattern = "[0-9]{4}" required>
+                                            <input class="input" type="number" name="BirthYear" placeholder="" value="" pattern = "[0-9]{4}"  title = "please type number" required>
                                         </div>
                                 </div>
 
@@ -60,21 +60,21 @@
                             <div class="field">
                                 <label class="label">BookTitle</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="BookTitle" placeholder="" value=""  pattern="[a-zA-Z ]{1,20}" title = "Title must be more than one alphabet charactor" required>
+                                        <input class="input" type="text" name="BookTitle" placeholder="" value=""  pattern="[0-9a-zA-Z ]{1,20}" title = "Title must be more than one alphabet charactor" required>
                                     </div>
                             </div>
                             
                             <div class="field">
                                 <label class="label">OriginalTitle</label>
                                     <div class="control">
-                                        <input class="input" type="text" name="OriginalTitle" placeholder="" pattern="[a-zA-Z ]{1,20}" title = "Original title must be more than one  alphabet charactor" required>
+                                        <input class="input" type="text" name="OriginalTitle" placeholder="" pattern="[0-9a-zA-Z ]{1,20}" title = "Original title must be more than one  alphabet charactor" required>
                                     </div>    
                             </div>
 
                             <div class="field">
                                 <label class="label">Year Of Publication</label>
                                     <div class="control">
-                                        <input class="input" type="number" pattern = "[0-9]{4}" name= "YearofPublication" placeholder= "" required >
+                                        <input class="input" type="number" pattern = "[0-9]{4}" name= "YearofPublication" placeholder= "" title = "please type number" required >
                                     </div>
                             </div>
 
@@ -88,7 +88,7 @@
                             <div class="field">
                                 <label class="label">Millions Sold</label>
                                     <div class="control">
-                                        <input class="input" type="number" pattern = "[0-9]{4}" name="MillionsSold" placeholder="" required>
+                                        <input class="input" type="number" pattern = "[0-9]{4}" name="MillionsSold" placeholder=""  title = "please type number" required>
                                     </div>
                             </div>
 

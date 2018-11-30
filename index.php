@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -28,13 +28,13 @@
                         <form action="controller/pdologin.php" method = "POST" autocomplete = "nope">
                             <div class="field">
                                 <div class="control">
-                                    <input class="input is-large" type="text" placeholder=" Your username" name = "username" autofocus autocomplete = "false">
+                                    <input class="input is-large" type="text" placeholder=" Your username" name = "username" autofocus autocomplete = "false" pattern="[a-zA-Z ]{1,20}" title="username must contain at least 3 character" required>
                                 </div>
                             </div>
 
                             <div class="field">
                                 <div class="control">
-                                    <input class="input is-large" type="password" placeholder="Your Password" name = "password" title="password must contain at least 3 character">
+                                    <input class="input is-large" type="password" placeholder="Your Password" name = "password" title="password must contain at least 3 character" pattern="[a-zA-Z ]{1,20}" required>
                                 </div>
                             </div>
                             <!-- <div class="field">

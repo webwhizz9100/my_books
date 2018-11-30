@@ -3,9 +3,11 @@
     session_start();
     if (empty($_SESSION["userID"])) {
         header('location: ../../controller/logout.php');
-    }else{
-        echo("UserID is set".$_SESSION["userID"]);
     }
+    // else{
+    //     echo("UserID is set".$_SESSION["userID"]);
+    // }
+    
     // if(isset($_SESSION['userID']) && !empty($_SESSION['userID'])) {
     //     echo'userID is set';
     //     // header('location: ../../controller/logout.php');

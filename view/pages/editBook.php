@@ -56,7 +56,7 @@
                                 <div class="field">
                                     <label class="label"> Author Name</label>
                                         <div class="control">
-                                            <input class="input" type="text" name="Name" placeholder="" value="<?php echo $Name;?>" pattern="[a-zA-Z ]{1,20}" title = "Name must be more than one alphabet charactor" required>
+                                            <input class="input" type="text" name="Name" placeholder="" value="<?php echo $Name;?>" pattern="[a-zA-Z .,']{1,20}" title = "Name must be more than one alphabet charactor" required>
                                         </div>
                                 </div>
 
@@ -77,14 +77,14 @@
                                 <div class="field">
                                     <label class="label">Birth Year</label>
                                         <div class="control">
-                                            <input class="input" type="number" name="BirthYear" placeholder="" value="<?php echo $BirthYear;?>" pattern = "[0-9]{4}" required>
+                                            <input class="input" type="number" name="BirthYear" placeholder="" value="<?php echo $BirthYear;?>" pattern = "[0-9]{4}"  title = "please type number" required>
                                         </div>
                                 </div>
 
                                 <div class="field">
                                     <label class="label">Death Year</label>
                                         <div class="control">
-                                            <input class="input" type="text" name="DeathYear" placeholder="" value="<?php echo $DeathYear;?>" required>
+                                            <input class="input" type="text" name="DeathYear" placeholder="" value="<?php echo $DeathYear;?>" title = "please type number" required>
                                         </div>
                                 </div></br>
                             <label class="label has-text-info is-size-3">Book Detail</label>             
@@ -92,21 +92,21 @@
                                 <div class="field">
                                     <label class="label">BookTitle</label>
                                         <div class="control">
-                                            <input class="input" type="text" name="BookTitle"  value="<?php echo $row['BookTitle'];?>" pattern="[a-zA-Z ]{1,20}" title = "Book Title must be more than one alphabet alphabet charactor" required>
+                                            <input class="input" type="text" name="BookTitle"  value="<?php echo $row['BookTitle'];?>" pattern="[0-9a-zA-Z ]{1,20}" title = "Book Title must be more than one alphabet alphabet charactor" required>
                                         </div>
                                 </div>
                                 
                                 <div class="field">
                                     <label class="label">OriginalTitle</label>
                                         <div class="control">
-                                            <input class="input" type="text" name="OriginalTitle" placeholder="" value="<?php echo $row['OriginalTitle'];?>"pattern="[a-zA-Z ]{1,20}" title = "Original Title must be more than one alphabet alphabet charactor" required>
+                                            <input class="input" type="text" name="OriginalTitle" placeholder="" value="<?php echo $row['OriginalTitle'];?>"pattern="[0-9a-zA-Z ]{1,20}" title = "Original Title must be more than one alphabet alphabet charactor" required>
                                         </div>    
                                 </div>
 
                                 <div class="field">
                                     <label class="label">Year Of Publication</label>
                                         <div class="control">
-                                            <input class="input" type="number" value = "<?php echo $row['YearofPublication'];?>" pattern = "[0-9]{4}" name= "YearofPublication" placeholder= "" required>
+                                            <input class="input" type="number" value = "<?php echo $row['YearofPublication'];?>" pattern = "[0-9]{4}" name= "YearofPublication" placeholder= "" title = "please type number" required>
                                         </div>
                                 </div>
 
